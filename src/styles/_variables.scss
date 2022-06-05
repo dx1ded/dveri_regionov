@@ -1,0 +1,27 @@
+:root {
+  // Colors
+
+  --color-black: #000;
+  --color-light: #fff;
+  --color-primary: #1c1e33;
+  --color-secondary: #5a385a;
+  --color-thindly: #a1536c;
+  --color-japonica: #de7a69;
+  --color-orange: #feb460;
+  --color-yellow: #f9f871;
+
+  // Offsets
+
+  --container-horizontal-offset: #{em(15px)};
+  --design-mw: #{em(1380px)};
+  --mw: calc(var(--design-mw) + var(--container-horizontal-offset) * 2);
+  --grid-gap: #{em(20px)};
+
+  // Fonts
+
+  --font-family: "Roboto", sans-serif;
+
+  // Shades
+  // Z-indexes
+  // Border-radiuses
+}

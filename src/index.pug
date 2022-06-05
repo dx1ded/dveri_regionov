@@ -1,0 +1,14 @@
+extends layouts/page
+include _mixins
+
+block config
+  - page.title = "Page Title"
+
+block styles
+  +style("styles/index.css")
+
+block partials
+  | Index Page
+
+block scripts
+  +script("scripts/index.js")
