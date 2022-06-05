@@ -1,0 +1,28 @@
+.title {
+  font-weight: 700;
+  line-height: em(48px, 36px);
+
+  // Sizes
+
+  &--xl {
+    font-size: rem(36px);
+  }
+
+  &--md {
+    font-size: rem(30px);
+  }
+
+  &--sm {
+    font-size: rem(24px);
+  }
+
+  // Colors
+
+  &--black {
+    color: var(--color-black);
+  }
+
+  &--light {
+    color: var(--color-light);
+  }
+}

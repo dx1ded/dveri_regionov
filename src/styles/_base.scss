@@ -35,8 +35,12 @@ body {
   outline: none;
 }
 
+.font-reset {
+  font-style: normal;
+}
+
 .site-container {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .visually-hidden {

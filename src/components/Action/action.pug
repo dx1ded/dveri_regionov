@@ -1,0 +1,9 @@
+mixin action(id, icon)
+  .action.text.text--sm.text--secondary(id=id)
+    +icon(icon)
+    block
+
+mixin action-link(href, icon)
+  a.action.link-reset.text.text--sm.text--secondary(href=href)
+    +icon(icon)
+    block

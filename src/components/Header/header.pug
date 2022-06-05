@@ -1,0 +1,37 @@
+include @cmps/Action/action
+
+header.header
+  .container
+    .header__top
+      address.header__number.font-reset.text.text--sm.text--secondary
+        | Для розничных клиентов
+        a.link-reset.text--md.text--primary(href="tel: +74951628202") +7 (495) 162-82-02
+      .header__info
+        .header__options
+          +action("phone-me", "phone")
+            | Обратный звонок
+          +action-link("mailto:info@dveriregionov.ru", "phone")
+            | info@dveriregionov.ru
+        include @cmps/Socials/socials
+    .header__bottom
+      include @cmps/Logo/logo
+      nav.main-nav
+        ul.list-reset.main-nav__list
+          li.main-nav__item
+            a.link-reset.text.text--sm.text--secondary(href="about.html") О компании
+          li.main-nav__item
+            a.link-reset.text.text--sm.text--secondary(href="catalog.html") Каталог
+          li.main-nav__item
+            a.link-reset.text.text--sm.text--secondary(href="discounts.html") Акции и скидки
+          li.main-nav__item
+            a.link-reset.text.text--sm.text--secondary(href="cooperation.html") Сотрудничество
+          li.main-nav__item
+            a(href="info.html#where-to-buy") Где купить
+          li.main-nav__item
+            a.link-reset.text.text--sm.text--secondary(href="service.html") Сервис 
+          li.main-nav__item
+            a.link-reset.text.text--sm.text--secondary(href="info.html#contacts") Контакты
+      a.cart-info(href="cart.html" aria-label="Корзина")
+        .cart-info__icon
+          +icon("cart")
+        span.cart-info__summary.text.text--sm.text--primary 13 950 руб.
