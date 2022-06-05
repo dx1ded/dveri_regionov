@@ -7,5 +7,11 @@
     width: rem(18px);
     height: rem(18px);
     margin-right: rem(14px);
+
+    @include sm-laptop {
+      width: rem(14px);
+      height: rem(14px);
+      margin-right: rem(10px);
+    }
   }
 }

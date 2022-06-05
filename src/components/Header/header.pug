@@ -1,20 +1,25 @@
 include @cmps/Action/action
+include @cmps/Logo/logo
+include @cmps/Burger/burger
 
 header.header
   .container
     .header__top
       address.header__number.font-reset.text.text--sm.text--secondary
         | Для розничных клиентов
-        a.link-reset.text--md.text--primary(href="tel: +74951628202") +7 (495) 162-82-02
+        a.link-reset.text--md.text--primary(href="tel:+74951628202") +7 (495) 162-82-02
       .header__info
         .header__actions
-          +action("phone-me", "phone")
+          +action("call-me", "phone")
             | Обратный звонок
           +action-link("mailto:info@dveriregionov.ru", "mail")
             | info@dveriregionov.ru
         include @cmps/Socials/socials
     .header__bottom
-      include @cmps/Logo/logo
+      +logo
+        .header__numbers
+          a.link-reset.text--sm.text--primary(href="tel:+74951628202") +7 (495) 162-82-02
+          a.link-reset.text--sm.text--primary(href="tel:+74951628202") +7 (495) 162-82-02
       nav.main-nav
         ul.list-reset.main-nav__list
           li.main-nav__item
@@ -28,10 +33,12 @@ header.header
           li.main-nav__item
             a.link-reset.text.text--sm.text--secondary(href="info.html#where-to-buy") Где купить
           li.main-nav__item
-            a.link-reset.text.text--sm.text--secondary(href="service.html") Сервис 
+            a.link-reset.text.text--sm.text--secondary(href="service.html") Сервис
           li.main-nav__item
             a.link-reset.text.text--sm.text--secondary(href="info.html#contacts") Контакты
-      a.link-reset.cart-info(href="cart.html" aria-label="Корзина")
-        .cart-info__icon
-          +icon("cart")
-        span.cart-info__summary.text.text--sm.text--primary 13 950 руб.
+      .header__right
+        +burger-toggle
+        a.link-reset.cart-info(href="cart.html" aria-label="Корзина")
+          .cart-info__icon
+            +icon("cart")
+          span.cart-info__summary.text.text--sm.text--primary 13 950 руб.

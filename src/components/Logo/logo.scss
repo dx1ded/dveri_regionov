@@ -1,4 +1,19 @@
-.logo img {
-  width: rem(180px);
-  border-radius: 10px;
+.logo {
+  img {
+    width: rem(180px);
+    border-radius: 10px;
+
+    @include resolution(1200px) {
+      width: rem(140px);
+    }
+
+    @include sm-laptop {
+      width: rem(120px);
+    }
+  }
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
 }

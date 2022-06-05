@@ -1,2 +1,5 @@
-a.logo.link-reset(href="/" aria-label="Главная страница")
-  +image("logo.jpg")(aria-hidden="true")
+mixin logo
+  .logo-wrapper
+    a.logo.link-reset(href="/" aria-label="Главная страница")
+      +image("logo.jpg")(aria-hidden="true")
+    block

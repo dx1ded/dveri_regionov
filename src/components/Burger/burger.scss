@@ -1,0 +1,85 @@
+@import "@cmps/Action/action";
+
+.burger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: rem(300px);
+  height: 100%;
+  overflow-y: auto;
+  background-color: #ededed;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+
+  &__top {
+    padding: rem(20px);
+    border-bottom: 1px solid #d6d6d6;
+
+    @include resolution(600px) {
+      padding: rem(15px) rem(20px);
+    }
+  }
+
+  &__toggle {
+    display: none;
+    width: rem(40px);
+    height: rem(40px);
+    padding: 0 rem(8px);
+    background-color: var(--color-japonica);
+    border-radius: 100%;
+
+    span {
+      display: block;
+      width: 100%;
+      height: rem(2px);
+      background-color: var(--color-light);
+      border-radius: 20px;
+
+      &:nth-child(2) {
+        margin: rem(5px) 0;
+      }
+    }
+
+    @include l-tablet {
+      display: block;
+    }
+
+    @include mobile {
+      width: rem(30px);
+      height: rem(30px);
+      padding: 0 rem(6px);
+
+      span:nth-child(2) {
+        margin: rem(4px) 0;
+      }
+    }
+  }
+
+  .action {
+    color: var(--color-black);
+
+    &:not(:last-child) {
+      margin-bottom: rem(4px);
+    }
+  }
+
+  &--active {
+    transform: none;
+  }
+
+  @include resolution(600px) {
+    width: rem(220px);
+  }
+}
+
+.burger-nav {
+  &__item a {
+    display: block;
+    padding: rem(15px) rem(20px);
+    border-bottom: 1px solid #d6d6d6;
+
+    @include resolution(600px) {
+      padding: rem(10px) rem(20px);
+    }
+  }
+}

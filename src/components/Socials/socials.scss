@@ -11,5 +11,12 @@
     &:not(:last-child) {
       margin-right: rem(10px);
     }
+
+    @include sm-laptop {
+      svg {
+        width: rem(14px);
+        height: rem(14px);
+      }
+    }
   }
 }
