@@ -1,0 +1,116 @@
+@import "@cmps/Logo/logo";
+@import "@cmps/Action/action";
+@import "@cmps/Socials/socials";
+
+.footer {
+  background-color: var(--color-primary);
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: rem(80px) 0;
+    border-bottom: 1px solid var(--color-light);
+
+    @include tablet {
+      padding: rem(60px) 0;
+    }
+
+    @include resolution(640px) {
+      flex-direction: column;
+      padding: rem(40px) 0;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 0 rem(-100px) rem(-100px) 0;
+
+    @include l-tablet {
+      margin: 0 rem(-40px) rem(-40px) 0;
+    }
+  }
+
+  &__column {
+    margin: 0 rem(100px) rem(100px) 0;
+
+    @include l-tablet {
+      margin: 0 rem(40px) rem(40px) 0;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    @include l-tablet {
+      font-size: rem(14px);
+    }
+
+    @include tablet {
+      font-size: rem(12px);
+    }
+  }
+
+  &__contacts a {
+    @include tablet {
+      font-size: rem(16px);
+    }
+  }
+
+  &__actions > * {
+    color: var(--color-light);
+
+    &:not(:last-child) {
+      margin-bottom: rem(10px);
+    }
+
+    @include l-tablet {
+      font-size: rem(14px);
+    }
+
+    @include tablet {
+      font-size: rem(12px);
+    }
+  }
+
+  &__socials span {
+    display: inline-block;
+    margin-bottom: rem(10px);
+
+    @include l-tablet {
+      font-size: rem(14px);
+    }
+
+    @include tablet {
+      font-size: rem(12px);
+    }
+  }
+
+  &__bottom {
+    padding: rem(25px) 0;
+
+    span {
+      @include l-tablet {
+        font-size: rem(14px);
+      }
+
+      @include mobile {
+        font-size: rem(12px);
+      }
+    }
+  }
+
+  .logo {
+    @include resolution(640px) {
+      margin-bottom: rem(30px);
+    }
+  }
+
+  &__contacts,
+  &__actions,
+  &__link:not(:last-child) {
+    margin-bottom: rem(12px);
+  }
+}

@@ -44,7 +44,7 @@
       display: block;
     }
 
-    @include mobile {
+    @include sm-mobile {
       width: rem(30px);
       height: rem(30px);
       padding: 0 rem(6px);

@@ -1,0 +1,36 @@
+include @cmps/Logo/logo
+include @cmps/Action/action
+
+footer.footer
+  .container
+    .footer__top
+      +logo
+      .footer__links
+        .footer__column
+          a.footer__link.link-reset.text.text--sm.text--thindly(href="about.html") О компании
+          a.footer__link.link-reset.text.text--sm.text--thindly(href="catalog.html") Каталог
+          a.footer__link.link-reset.text.text--sm.text--thindly(href="about.html") Акции и скидки
+          a.footer__link.link-reset.text.text--sm.text--thindly(href="about.html") Сотрудничество
+          a.footer__link.link-reset.text.text--sm.text--thindly(href="info.html#whete-to-buy") Где купить
+          a.footer__link.link-reset.text.text--sm.text--thindly(href="about.html") Сервис
+          a.footer__link.link-reset.text.text--sm.text--thindly(href="contacts.html") Контакты
+        .footer__column
+          a.footer__link.link-reset.text.text--sm.text--thindly(href="catalog.html") Входные двери
+          a.footer__link.link-reset.text.text--sm.text--thindly(href="catalog.html") Межкомнатные двери
+          a.footer__link.link-reset.text.text--sm.text--thindly(href="catalog.html") Дисконт
+          a.footer__link.link-reset.text.text--sm.text--thindly(href="catalog.html") Стеновые панели
+          a.footer__link.link-reset.text.text--sm.text--thindly(href="catalog.html") Столы
+          a.footer__link.link-reset.text.text--sm.text--thindly(href="contacts.html") Фурнитура
+        .footer__column
+          address.footer__contacts.font-reset
+            a.link-reset.text.text--md.text--thindly(href="tel:+74951628202") +7 (495) 162-82-02
+          .footer__actions
+            +action("call-me", "phone")
+              | Обратный звонок
+            +action-link("mailto:info@dveriregionov.ru", "mail")
+              | info@dveriregionov.ru
+          .footer__socials
+            span.text.text--sm.text--thindly Мы в соцсетях
+            include @cmps/Socials/socials
+    .footer__bottom
+      span.text.text--sm.text--thindly &copy; Дверной Регион, 2001-2021
