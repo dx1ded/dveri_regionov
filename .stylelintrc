@@ -9,6 +9,7 @@
     "value-list-comma-newline-after": "always-multi-line",
     "no-descending-specificity": null,
     "value-no-vendor-prefix": null,
+    "selector-class-pattern": null,
     "order/order": [
       "custom-properties",
 			"dollar-variables",

@@ -60,6 +60,7 @@
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
+    "swiper": "^8.2.2",
     "vanilla-lazyload": "^17.5.0"
   }
 }
