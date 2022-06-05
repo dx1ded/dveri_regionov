@@ -1,0 +1,15 @@
+.socials {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    svg {
+      width: rem(18px);
+      height: rem(18px);
+    }
+
+    &:not(:last-child) {
+      margin-right: rem(10px);
+    }
+  }
+}

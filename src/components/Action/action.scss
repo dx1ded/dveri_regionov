@@ -1,0 +1,11 @@
+.action {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  svg {
+    width: rem(18px);
+    height: rem(18px);
+    margin-right: rem(14px);
+  }
+}

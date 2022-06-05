@@ -3,5 +3,73 @@
 @import "@cmps/Logo/logo";
 
 .header {
+  background-color: var(--color-light);
 
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(20px) 0;
+    border-bottom: 1px solid #e9ebee;
+  }
+
+  &__number a {
+    margin-left: rem(20px);
+  }
+
+  &__actions {
+    margin-right: rem(40px);
+  }
+
+  &__bottom {
+    display: grid;
+    grid-template-columns: rem(180px) 1fr rem(180px);
+    column-gap: rem(70px);
+    align-items: center;
+    padding: rem(20px) 0;
+  }
+
+  .action:not(:last-child) {
+    margin-right: rem(30px);
+  }
+
+  &__number,
+  &__info,
+  &__actions {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.main-nav {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.cart-info {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(40px);
+    height: rem(40px);
+    margin-right: rem(12px);
+    background-color: var(--color-japonica);
+    border-radius: 100%;
+
+    svg {
+      width: rem(16px);
+      height: rem(16px);
+    }
+  }
+
+  &__summary {
+    font-weight: 500;
+  }
 }
