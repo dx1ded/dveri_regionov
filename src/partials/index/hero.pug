@@ -1,30 +1,32 @@
 section.hero
   h2.visually-hidden Новинки компании
-  .container.hero__container
-    .hero__slider.swiper
-      .swiper-wrapper
-        .hero-slide.swiper-slide
-          h2.hero-slide__title.title.title--xl.title--light Новинка!
+  .hero__slider.swiper
+    .swiper-wrapper
+      .hero-slide.swiper-slide
+        .hero-slide__container.container
+          h2.hero-slide__title Новинка!
           ul.hero-slide__list.list-reset
-            li.hero-slide__item.text.text--md.text--thindly Покритие Marable Soft Touch
-            li.hero-slide__item.text.text--md.text--thindly Оклейка фотообоями
-            li.hero-slide__item.text.text--md.text--thindly Покраска любой краской
+            li.hero-slide__item Покритие Marable Soft Touch
+            li.hero-slide__item Оклейка фотообоями
+            li.hero-slide__item Покраска любой краской
           a.hero-slide__cta.btn.btn-reset.btn--md.btn--primary Узнать больше
-        .hero-slide.swiper-slide
-          h2.hero-slide__title.title.title--xl.title--light "Мраморные древи"
+      .hero-slide.swiper-slide
+        .hero-slide__container.container
+          h2.hero-slide__title "Мраморные древи"
           ul.hero-slide__list.list-reset
-            li.hero-slide__item.text.text--md.text--thindly Покритие Marable Soft Touch
-            li.hero-slide__item.text.text--md.text--thindly Оклейка фотообоями
+            li.hero-slide__item Покритие Marable Soft Touch
+            li.hero-slide__item Оклейка фотообоями
           a.hero-slide__cta.btn.btn-reset.btn--md.btn--primary Узнать больше
-        .hero-slide.swiper-slide
-          h2.hero-slide__title.title.title--xl.title--light Свобода творчества!
+      .hero-slide.swiper-slide
+        .hero-slide__container.container
+          h2.hero-slide__title Свобода творчества!
           ul.hero-slide__list.list-reset
-            li.hero-slide__item.text.text--md.text--thindly Покритие Marable Soft Touch
-            li.hero-slide__item.text.text--md.text--thindly Оклейка фотообоями
-            li.hero-slide__item.text.text--md.text--thindly Покраска любой краской
+            li.hero-slide__item Покритие Marable Soft Touch
+            li.hero-slide__item Оклейка фотообоями
+            li.hero-slide__item Покраска любой краской
           a.hero-slide__cta.btn.btn-reset.btn--md.btn--primary Узнать больше
-      .hero-slider__nav
-        button.btn-reset.hero-slider__nav-item.hero-slider__nav-item--prev(aria-hidden="true")
-          +icon("arrow-left")
-        button.btn-reset.hero-slider__nav-item.hero-slider__nav-item--next(aria-hidden="true")
-          +icon("arrow-right")
+    .hero-slider__nav
+      button.btn-reset.hero-slider__nav-item.hero-slider__nav-item--prev(aria-hidden="true")
+        +icon("arrow-left")
+      button.btn-reset.hero-slider__nav-item.hero-slider__nav-item--next(aria-hidden="true")
+        +icon("arrow-right")

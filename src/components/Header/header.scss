@@ -3,30 +3,17 @@
 @import "@cmps/Logo/logo";
 
 .header {
+  position: fixed;
+  z-index: var(--z-header);
+  width: 100%;
   background-color: var(--color-light);
+  box-shadow: 0 1px 6px rgb(0 0 0 / 20%);
 
-  &__top {
-    border-bottom: 1px solid #e9ebee;
-
-    @include l-tablet {
-      display: none;
-    }
-  }
-
-  &__number a {
-    margin-left: rem(20px);
-
-    @include sm-laptop {
-      margin-left: rem(10px);
-    }
-  }
-
-  &__actions {
-    margin-right: rem(40px);
-
-    @include sm-laptop {
-      margin-right: rem(30px);
-    }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(10px) var(--container-horizontal-offset);
   }
 
   &__numbers {
@@ -51,32 +38,66 @@
     }
   }
 
-  .action:not(:last-child) {
-    margin-right: rem(30px);
-
-    @include sm-laptop {
-      margin-right: rem(20px);
-    }
-  }
-
-  &__top,
-  &__bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: rem(20px) 0;
-
-    @include sm-laptop {
-      padding: rem(16px) 0;
-    }
-  }
-
-  &__number,
-  &__info,
-  &__actions,
   &__right {
     display: flex;
     align-items: center;
+
+    & > * {
+      margin-right: rem(12px);
+
+      @include sm-laptop {
+        margin-right: rem(8px);
+      }
+
+      @include l-tablet {
+        margin-right: rem(16px);
+      }
+
+      @include sm-mobile {
+        margin-right: rem(10px);
+      }
+    }
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(40px);
+    height: rem(40px);
+    background-color: var(--color-japonica);
+    border-radius: 100%;
+
+    svg {
+      width: rem(16px);
+      height: rem(16px);
+      fill: var(--color-light);
+    }
+
+    @include sm-laptop {
+      width: rem(34px);
+      height: rem(34px);
+
+      svg {
+        width: rem(14px);
+        height: rem(14px);
+      }
+    }
+
+    @include l-tablet {
+      width: rem(40px);
+      height: rem(40px);
+
+      svg {
+        width: rem(16px);
+        height: rem(16px);
+      }
+    }
+
+    @include sm-mobile {
+      width: rem(34px);
+      height: rem(34px);
+    }
   }
 }
 
@@ -99,62 +120,5 @@
 
   @include l-tablet {
     display: none;
-  }
-}
-
-.cart-info {
-  display: flex;
-  align-items: center;
-
-  &__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: rem(40px);
-    height: rem(40px);
-    margin-right: rem(12px);
-    background-color: var(--color-japonica);
-    border-radius: 100%;
-
-    svg {
-      width: rem(16px);
-      height: rem(16px);
-    }
-
-    @include sm-laptop {
-      width: rem(34px);
-      height: rem(34px);
-      margin-right: rem(8px);
-
-      svg {
-        width: rem(14px);
-        height: rem(14px);
-      }
-    }
-
-    @include l-tablet {
-      width: rem(40px);
-      height: rem(40px);
-      margin: 0 0 0 rem(16px);
-
-      svg {
-        width: rem(16px);
-        height: rem(16px);
-      }
-    }
-
-    @include sm-mobile {
-      width: rem(34px);
-      height: rem(34px);
-      margin-left: rem(10px);
-    }
-  }
-
-  &__summary {
-    font-weight: 500;
-
-    @include l-tablet {
-      display: none;
-    }
   }
 }
