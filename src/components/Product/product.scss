@@ -1,0 +1,39 @@
+.product {
+  padding: rem(30px) rem(20px);
+  background-color: var(--color-light);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+
+  &__image {
+    margin-bottom: rem(30px);
+    text-align: center;
+
+    img {
+      width: rem(150px);
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(40px);
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__buy {
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: rem(16px);
+      height: rem(16px);
+    }
+  }
+
+  &__price {
+    font-size: rem(18px);
+  }
+}

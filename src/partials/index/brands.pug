@@ -1,0 +1,20 @@
+section.brands
+  .container
+    h2.brands__title.title.title--xl.title--black Бренды
+    .brands__wrapper
+      button.brands__nav.brands__nav--prev.btn.btn-reset.btn--primary(aria-hidden="true")
+        +icon("arrow-left")
+      .brands__slider.swiper
+        .swiper-wrapper
+          .brands-slide.swiper-slide
+            +image("brands/agb.jpg", "Бренд AGB")
+          .brands-slide.swiper-slide
+            +image("brands/dveri-oka.jpg", "Бренд Двери Ока")
+          .brands-slide.swiper-slide
+            +image("brands/lecma.jpg", "Бренд Лекма")
+          .brands-slide.swiper-slide
+            +image("brands/morelli.jpg", "Бренд Морелли")
+          .brands-slide.swiper-slide
+            +image("brands/regidoors.jpg", "Бренд Регидорс")
+      button.brands__nav.brands__nav--next.btn.btn-reset.btn--primary(aria-hidden="true")
+        +icon("arrow-right")
