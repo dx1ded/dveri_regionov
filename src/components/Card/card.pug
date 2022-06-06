@@ -1,0 +1,6 @@
+mixin card(title, ...paragraphs)
+  .card
+    if title
+      h2.card__title.title.title--md.title--black= title
+    each paragraph in paragraphs
+      p.card__text.text.text--md.text--primary= paragraph

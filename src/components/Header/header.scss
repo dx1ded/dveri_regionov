@@ -42,7 +42,7 @@
     display: flex;
     align-items: center;
 
-    & > * {
+    & > *:not(:last-child) {
       margin-right: rem(12px);
 
       @include sm-laptop {
@@ -94,6 +94,13 @@
       }
     }
 
+    @include tablet {
+      &--mail,
+      &--phone {
+        display: none;
+      }
+    }
+
     @include sm-mobile {
       width: rem(34px);
       height: rem(34px);
@@ -102,7 +109,7 @@
 }
 
 .main-nav {
-  flex-basis: rem(800px);
+  flex-basis: rem(700px);
   margin: 0 rem(20px);
 
   &__list {
@@ -111,11 +118,11 @@
   }
 
   @include resolution(1200px) {
-    flex-basis: rem(680px);
+    flex-basis: rem(600px);
   }
 
   @include sm-laptop {
-    flex-basis: rem(600px);
+    flex-basis: rem(500px);
   }
 
   @include l-tablet {

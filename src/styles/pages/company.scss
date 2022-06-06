@@ -1,0 +1,13 @@
+@import "../mixins";
+
+// Components
+
+@import "@cmps/Burger/burger";
+@import "@cmps/Header/header";
+@import "@cmps/Footer/footer";
+@import "@cmps/Breadcrumbs/breadcrumbs";
+@import "@cmps/Card/card";
+
+// Partials
+
+@import "@partials/company/about";

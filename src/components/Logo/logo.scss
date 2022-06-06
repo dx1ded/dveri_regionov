@@ -10,6 +10,10 @@
     @include sm-laptop {
       width: rem(120px);
     }
+
+    @include mobile {
+      width: rem(110px);
+    }
   }
 }
 

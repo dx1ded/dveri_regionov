@@ -11,11 +11,9 @@ header.header
     nav.main-nav
       ul.list-reset.main-nav__list
         li.main-nav__item
-          a.link-reset.text.text--sm.text--secondary(href="about.html") О компании
+          a.link-reset.text.text--sm.text--secondary(href="company.html") О компании
         li.main-nav__item
           a.link-reset.text.text--sm.text--secondary(href="catalog.html") Каталог
-        li.main-nav__item
-          a.link-reset.text.text--sm.text--secondary(href="discounts.html") Акции и скидки
         li.main-nav__item
           a.link-reset.text.text--sm.text--secondary(href="cooperation.html") Сотрудничество
         li.main-nav__item
@@ -26,9 +24,9 @@ header.header
           a.link-reset.text.text--sm.text--secondary(href="info.html#contacts") Контакты
     .header__right
       +burger-toggle
-      a.link-reset.header__action(href="mailto:info@dveriregionov.ru")
+      a.link-reset.header__action.header__action--mail(href="mailto:info@dveriregionov.ru")
         +icon("mail")
-      a.link-reset.header__action(href="tel:+74951628202")
+      a.link-reset.header__action.header__action--phone(href="tel:+74951628202")
         +icon("phone")
       a.link-reset.header__action(href="cart.html" aria-label="Корзина")
         +icon("cart")

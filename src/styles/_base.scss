@@ -41,7 +41,30 @@ body {
 }
 
 .site-container {
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+main {
+  // Padding by header height
+
+  padding-top: rem(112px);
+
+  @include resolution(1200px) {
+    padding-top: rem(92px);
+  }
+
+  @include sm-laptop {
+    padding-top: rem(82px);
+  }
+
+  @include mobile {
+    padding-top: rem(78px);
+  }
 }
 
 .visually-hidden {

@@ -1,0 +1,17 @@
+.breadcrumbs {
+  margin: rem(30px) 0;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    &::after {
+      display: inline-block;
+      margin: 0 rem(8px);
+      color: var(--color-gray);
+      vertical-align: middle;
+      content: "/";
+    }
+  }
+}
