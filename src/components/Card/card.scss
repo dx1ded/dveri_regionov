@@ -52,3 +52,23 @@
     margin-bottom: rem(20px);
   }
 }
+
+.card-table {
+  max-width: rem(1200px);
+  margin-bottom: rem(40px);
+  text-align: center;
+  border-collapse: collapse;
+
+  &__row:nth-child(2n) {
+    background-color: rgb(233 233 233);
+  }
+
+  &__data {
+    padding: rem(20px);
+    border: 1px solid var(--color-black);
+
+    &:nth-child(2) {
+      text-align: left;
+    }
+  }
+}

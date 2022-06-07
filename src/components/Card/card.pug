@@ -16,6 +16,13 @@ mixin card-image(src, alt)
   .card__image
     +image(src, alt)
 
+mixin card-table(...items)
+  table.card-table
+    each row in items
+      tr.card-table__row
+        each data in row
+          td.card-table__data= data
+
 mixin card
   .card
     block
