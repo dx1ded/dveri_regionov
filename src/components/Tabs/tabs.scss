@@ -1,0 +1,42 @@
+.tabs {
+  display: grid;
+  gap: var(--grid-gap);
+
+  &__item {
+    display: block;
+    padding: rem(18px) 0;
+    font-size: rem(20px);
+    color: var(--color-primary);
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--color-light);
+    border: 1px solid currentcolor;
+    border-radius: 10px;
+    transition:
+      color 0.3s ease-in-out,
+      background-color 0.3s ease-in-out,
+      border-color 0.3s ease-in-out;
+
+    &--active {
+      color: var(--color-light);
+      background-color: var(--color-japonica);
+    }
+  }
+}
+
+main > *[id] {
+  position: absolute;
+  visibility: visible;
+  opacity: 0;
+  transition:
+    visibility 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+  transform: translateX(-10000px);
+
+  &:target {
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,46 @@
+extends layouts/page
+include _mixins
+
+block config
+  - page.title = "Информация - Дверной Регион"
+
+block styles
+  +style("styles/info.css")
+
+include @cmps/Burger/burger
+include @cmps/Breadcrumbs/breadcrumbs
+include @cmps/Tabs/tabs
+
+block partials
+  +burger
+
+  include @cmps/Header/header
+  main
+    +breadcrumbs(
+      {
+        name: "Главная",
+        path: "/"
+      },
+      {
+        name: "Информация",
+        path: "/info"
+      }
+    )
+    +tabs(
+      {
+        name: "Где купить",
+        hash: "#where-to-buy"
+      },
+      {
+        name: "Контакты",
+        hash: "#contacts"
+      }
+    )
+    #where-to-buy
+      include @partials/info/where-to-buy
+    #contacts
+      include @partials/info/contacts
+  include @cmps/Footer/footer
+
+block scripts
+  +script("scripts/info.js")
