@@ -2,7 +2,7 @@ extends layouts/page
 include _mixins
 
 block config
-  - page.title = "О компании - Дверной Регион"
+  - page.title = "Доставка - Дверной Регион"
 
 block styles
   +style("styles/text-page.css")
@@ -21,11 +21,15 @@ block partials
         path: "/"
       },
       {
-        name: "О компании",
-        path: "/company"
+        name: "Доставка",
+        path: "/delivery"
       }
     )
-    include @partials/company/about
+    include @partials/delivery/inside
+    include @partials/delivery/outside
+    include @partials/delivery/regions
+    include @partials/delivery/moscow-region
+    include @partials/delivery/info
   include @cmps/Footer/footer
 
 block scripts

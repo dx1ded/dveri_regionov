@@ -13,17 +13,12 @@
     }
   }
 
-  &__title {
-    margin-bottom: rem(30px);
+  &__subtitle {
+    max-width: em(1000px, 24px);
   }
 
   &__text {
     max-width: em(1000px, 18px);
-    margin-bottom: rem(20px);
-  }
-
-  &__list {
-    margin-bottom: rem(30px);
   }
 
   &__item {
@@ -45,5 +40,15 @@
 
   & > *:last-child {
     margin-bottom: 0;
+  }
+
+  &__title,
+  &__list {
+    margin-bottom: rem(30px);
+  }
+
+  &__subtitle,
+  &__text {
+    margin-bottom: rem(20px);
   }
 }

@@ -1,5 +1,8 @@
 mixin card-title(title)
-  h2.card__title.title.title--md.title--black= title
+  h2.card__title.title.title--md.title--black&attributes(attributes)= title
+
+mixin card-subtitle(subtitle)
+  h3.card__subtitle.title.title--sm.title--black= subtitle
 
 mixin card-paragraph(text)
   p.card__text.text.text--md.text--primary= text
