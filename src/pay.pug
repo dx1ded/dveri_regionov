@@ -1,0 +1,35 @@
+extends layouts/page
+include _mixins
+
+block config
+  - page.title = "Оплата - Дверной Регион"
+
+block styles
+  +style("styles/text-page.css")
+
+include @cmps/Burger/burger
+include @cmps/Breadcrumbs/breadcrumbs
+
+block partials
+  +burger
+
+  include @cmps/Header/header
+  main
+    +breadcrumbs(
+      {
+        name: "Главная",
+        path: "/"
+      },
+      {
+        name: "Оплата",
+        path: "/pay"
+      }
+    )
+    include @partials/pay/cash
+    include @partials/pay/cashless
+    include @partials/pay/by-card
+    include @partials/pay/rules
+  include @cmps/Footer/footer
+
+block scripts
+  +script("scripts/text-page.js")
