@@ -21,11 +21,15 @@ block partials
         path: "/"
       },
       {
-        name: "О компании",
-        path: "/company.html"
+        name: "Сотрудничество",
+        path: "/cooperation.html"
       }
     )
-    include @partials/company/about
+    include @partials/cooperation/invite
+    include @partials/cooperation/benefits
+    include @partials/cooperation/variants
+    include @partials/cooperation/production
+    include @partials/cooperation/prefers
   include @cmps/Footer/footer
 
 block scripts

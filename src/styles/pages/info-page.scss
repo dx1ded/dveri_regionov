@@ -8,6 +8,10 @@
 @import "@cmps/Breadcrumbs/breadcrumbs";
 @import "@cmps/Card/card";
 
-// Partials
+section:not(:last-child) {
+  margin-bottom: rem(30px);
+}
 
-@import "@partials/company/about";
+section:last-child {
+  margin-bottom: rem(80px);
+}

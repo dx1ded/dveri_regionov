@@ -1,6 +1,18 @@
-mixin card(title, ...paragraphs)
+mixin card-title(title)
+  h2.card__title.title.title--md.title--black= title
+
+mixin card-paragraph(text)
+  p.card__text.text.text--md.text--primary= text
+
+mixin card-list(...elements)
+  ul.card__list.list-reset
+    each element in elements
+      li.card__item.text.text.text--sm.text--primary= element
+
+mixin card-image(src, alt)
+  .card__image
+    +image(src, alt)
+
+mixin card
   .card
-    if title
-      h2.card__title.title.title--md.title--black= title
-    each paragraph in paragraphs
-      p.card__text.text.text--md.text--primary= paragraph
+    block
