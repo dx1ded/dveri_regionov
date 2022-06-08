@@ -6,13 +6,7 @@
 @import "@cmps/Header/header";
 @import "@cmps/Footer/footer";
 @import "@cmps/Breadcrumbs/breadcrumbs";
-@import "@cmps/Card/card";
-@import "@cmps/Dropdown/dropdown";
 
-section:not(:last-child) {
-  margin-bottom: rem(30px);
-}
+// Partials
 
-section:last-child {
-  margin-bottom: rem(90px);
-}
+@import "@partials/catalog/list";
