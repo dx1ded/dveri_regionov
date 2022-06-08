@@ -1,0 +1,26 @@
+.pagination {
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item {
+    svg {
+      width: rem(12px);
+      height: rem(12px);
+      stroke: var(--color-black);
+    }
+
+    &:not(:last-child) {
+      margin-right: rem(20px);
+    }
+
+    &--active {
+      a {
+        font-weight: 500;
+        color: var(--color-japonica);
+      }
+    }
+  }
+}

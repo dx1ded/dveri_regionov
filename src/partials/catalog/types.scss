@@ -1,4 +1,4 @@
-.list {
+.types {
   margin-bottom: rem(90px);
 
   &__container {
@@ -9,7 +9,7 @@
   }
 }
 
-.list-item {
+.types-item {
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -34,7 +34,7 @@
   }
 
   &:hover {
-    .list-item__name {
+    .types-item__name {
       background-color: var(--color-secondary);
     }
   }

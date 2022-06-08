@@ -2,10 +2,10 @@ extends layouts/page
 include _mixins
 
 block config
-  - page.title = "Каталог - Дверной Регион"
+  - page.title = "Каталог Типа - Дверной Регион"
 
 block styles
-  +style("styles/catalog.css")
+  +style("styles/catalog-list.css")
 
 include @cmps/Burger/burger
 include @cmps/Breadcrumbs/breadcrumbs
@@ -23,10 +23,15 @@ block partials
       {
         name: "Каталог",
         path: "/catalog"
+      },
+      {
+        name: "Тип продукции",
+        path: "/catalog-list"
       }
     )
-    include @partials/catalog/types
+    include @partials/catalog-list/list
+    include @cmps/Pagination/pagination
   include @cmps/Footer/footer
 
 block scripts
-  +script("scripts/text-page.js")
+  +script("scripts/catalog-list.js")

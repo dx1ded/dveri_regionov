@@ -52,6 +52,10 @@
 				"type": "rule",
 				"selector": "&:disabled"
 			},
+      {
+				"type": "rule",
+				"selector": "&:not"
+			},
 			{
 				"type": "rule",
 				"selector": "&:first-child"

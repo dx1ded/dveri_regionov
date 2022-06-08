@@ -6,7 +6,13 @@
 @import "@cmps/Header/header";
 @import "@cmps/Footer/footer";
 @import "@cmps/Breadcrumbs/breadcrumbs";
+@import "@cmps/Product/product";
+@import "@cmps/Pagination/pagination";
 
 // Partials
 
-@import "@partials/catalog/types";
+@import "@partials/catalog-list/list";
+
+.pagination {
+  margin: rem(60px) 0 rem(90px);
+}
