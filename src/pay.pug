@@ -7,23 +7,14 @@ block config
 block styles
   +style("styles/pay.css")
 
-include @cmps/Burger/burger
 include @cmps/Breadcrumbs/breadcrumbs
 
 block partials
-  +burger
-
   include @cmps/Header/header
   main
     +breadcrumbs(
-      {
-        name: "Главная",
-        path: "/"
-      },
-      {
-        name: "Оплата",
-        path: "/pay"
-      }
+      { name: "Главная", path: "/" },
+      { name: "Оплата", path: "/pay" }
     )
     include @partials/pay/cash
     include @partials/pay/cashless

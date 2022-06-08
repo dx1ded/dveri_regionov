@@ -5,25 +5,16 @@ block config
   - page.title = "Гарантия - Дверной Регион"
 
 block styles
-  +style("styles/text-page.css")
+  +style("styles/cards-page.css")
 
-include @cmps/Burger/burger
 include @cmps/Breadcrumbs/breadcrumbs
 
 block partials
-  +burger
-
   include @cmps/Header/header
   main
     +breadcrumbs(
-      {
-        name: "Главная",
-        path: "/"
-      },
-      {
-        name: "Гарантия",
-        path: "/garantee"
-      }
+      { name: "Главная", path: "/" },
+      { name: "Гарантия", path: "/garantee" }
     )
     include @partials/garantee/service
     include @partials/garantee/defect
@@ -31,4 +22,4 @@ block partials
   include @cmps/Footer/footer
 
 block scripts
-  +script("scripts/text-page.js")
+  +script("scripts/cards-page.js")

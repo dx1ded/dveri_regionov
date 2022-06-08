@@ -3,30 +3,31 @@ include @cmps/Logo/logo
 include @cmps/Burger/burger
 
 header.header
+  +burger
   .container.header__container
     +logo
       address.header__numbers.font-reset
-        a.link-reset.text--sm.text--primary(href="tel:+74951628202") +7 (495) 162-82-02
-        a.link-reset.text--sm.text--primary(href="tel:+74951628202") +7 (495) 162-82-02
+        a.link-reset.text--sm.text--black(href="tel:89035354242") 8-903-535-42-42
+        a.link-reset.text--sm.text--black(href="tel:89162634242") 8-916-263-42-42
     nav.main-nav
       ul.list-reset.main-nav__list
         li.main-nav__item
-          a.link-reset.text.text--sm.text--secondary(href="company.html") О компании
+          a.link-reset.text.text--sm.text--gray(href="/company") О компании
         li.main-nav__item
-          a.link-reset.text.text--sm.text--secondary(href="catalog.html") Каталог
+          a.link-reset.text.text--sm.text--gray(href="/catalog") Каталог
         li.main-nav__item
-          a.link-reset.text.text--sm.text--secondary(href="cooperation.html") Сотрудничество
+          a.link-reset.text.text--sm.text--gray(href="/cooperation") Сотрудничество
         li.main-nav__item
-          a.link-reset.text.text--sm.text--secondary(href="info.html#where-to-buy") Где купить
+          a.link-reset.text.text--sm.text--gray(href="/info#where-to-buy") Где купить
         li.main-nav__item
-          a.link-reset.text.text--sm.text--secondary(href="service.html") Сервис
+          a.link-reset.text.text--sm.text--gray(href="service.html") Сервис
         li.main-nav__item
-          a.link-reset.text.text--sm.text--secondary(href="info.html#contacts") Контакты
+          a.link-reset.text.text--sm.text--gray(href="/info#contacts") Контакты
     .header__right
       +burger-toggle
-      a.link-reset.header__action.header__action--mail(href="mailto:info@dveriregionov.ru")
+      a.link-reset.header__action.header__action--mail(href="mailto:m-dvor03@mail.ru" aria-label="Почта компании")
         +icon("mail")
-      a.link-reset.header__action.header__action--phone(href="tel:+74951628202")
+      a.link-reset.header__action.header__action--phone(href="tel:89035354242" aria-label="Телефон отдела продаж")
         +icon("phone")
-      a.link-reset.header__action(href="cart.html" aria-label="Корзина")
+      a.link-reset.header__action(href="/cart" aria-label="Корзина")
         +icon("cart")

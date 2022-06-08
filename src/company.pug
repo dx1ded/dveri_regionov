@@ -5,28 +5,19 @@ block config
   - page.title = "О компании - Дверной Регион"
 
 block styles
-  +style("styles/text-page.css")
+  +style("styles/cards-page.css")
 
-include @cmps/Burger/burger
 include @cmps/Breadcrumbs/breadcrumbs
 
 block partials
-  +burger
-
   include @cmps/Header/header
   main
     +breadcrumbs(
-      {
-        name: "Главная",
-        path: "/"
-      },
-      {
-        name: "О компании",
-        path: "/company"
-      }
+      { name: "Главная", path: "/" },
+      { name: "О компании", path: "/company" }
     )
     include @partials/company/about
   include @cmps/Footer/footer
 
 block scripts
-  +script("scripts/text-page.js")
+  +script("scripts/cards-page.js")

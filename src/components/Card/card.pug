@@ -5,12 +5,12 @@ mixin card-subtitle(subtitle)
   h3.card__subtitle.title.title--sm.title--black= subtitle
 
 mixin card-paragraph(text)
-  p.card__text.text.text--md.text--primary= text
+  p.card__text.text.text--md.text--black= text
 
 mixin card-list(...elements)
   ul.card__list.list-reset
     each element in elements
-      li.card__item.text.text.text--sm.text--primary= element
+      li.card__item.text.text.text--sm.text--black= element
 
 mixin card-image(src, alt)
   .card__image

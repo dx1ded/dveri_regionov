@@ -1,0 +1,23 @@
+extends layouts/page
+include _mixins
+
+block config
+  - page.title = "Карточка товара - Дверной Регион"
+
+block styles
+  +style("styles/product.css")
+
+include @cmps/Breadcrumbs/breadcrumbs
+
+block partials
+  include @cmps/Header/header
+  main
+    +breadcrumbs(
+      { name: "Главная", path: "/" },
+      { name: "Карточка товара", path: "/product?id=0" }
+    )
+    include @partials/product/card
+  include @cmps/Footer/footer
+
+block scripts
+  +script("scripts/product.js")

@@ -7,27 +7,15 @@ block config
 block styles
   +style("styles/catalog-list.css")
 
-include @cmps/Burger/burger
 include @cmps/Breadcrumbs/breadcrumbs
 
 block partials
-  +burger
-
   include @cmps/Header/header
   main
     +breadcrumbs(
-      {
-        name: "Главная",
-        path: "/"
-      },
-      {
-        name: "Каталог",
-        path: "/catalog"
-      },
-      {
-        name: "Тип продукции",
-        path: "/catalog-list"
-      }
+      { name: "Главная", path: "/" },
+      { name: "Каталог", path: "/catalog" },
+      { name: "<Тип>", path: "/catalog/[type]" }
     )
     include @partials/catalog-list/list
     include @cmps/Pagination/pagination

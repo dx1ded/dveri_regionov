@@ -7,26 +7,17 @@ block config
 block styles
   +style("styles/catalog.css")
 
-include @cmps/Burger/burger
 include @cmps/Breadcrumbs/breadcrumbs
 
 block partials
-  +burger
-
   include @cmps/Header/header
   main
     +breadcrumbs(
-      {
-        name: "Главная",
-        path: "/"
-      },
-      {
-        name: "Каталог",
-        path: "/catalog"
-      }
+      { name: "Главная", path: "/" },
+      { name: "Каталог", path: "/catalog" }
     )
     include @partials/catalog/types
   include @cmps/Footer/footer
 
 block scripts
-  +script("scripts/text-page.js")
+  +script("scripts/cards-page.js")

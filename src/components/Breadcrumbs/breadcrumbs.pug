@@ -4,4 +4,4 @@ mixin breadcrumbs(...items)
       ul.breadcrumbs__list.list-reset
         each item in items
           li.breadcrumbs__item
-            a.link-reset.text.text--sm.text--secondary(href=`${item.path}`)= item.name
+            a.link-reset.text.text--sm.text--gray(href=`${item.path}`)= item.name
