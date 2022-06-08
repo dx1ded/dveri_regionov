@@ -1,0 +1,32 @@
+.counter {
+  display: grid;
+  grid-template-columns: rem(50px) rem(20px) rem(50px);
+  grid-auto-rows: rem(40px);
+  background-color: var(--color-light);
+  border-radius: 5px;
+
+  &__action {
+    font-size: rem(20px);
+
+    &--decrement {
+      order: 1;
+    }
+
+    &--increment {
+      order: 3;
+    }
+  }
+
+  &__display {
+    order: 2;
+    text-align: center;
+    border: none;
+    outline: none;
+    appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      appearance: none;
+    }
+  }
+}

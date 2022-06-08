@@ -14,7 +14,8 @@ block partials
   main
     +breadcrumbs(
       { name: "Главная", path: "/" },
-      { name: "Карточка товара", path: "/product?id=0" }
+      { name: "Каталог типа", path: "/catalog/arch" },
+      { name: "Название товара", path: "/product?id=0" }
     )
     include @partials/product/card
   include @cmps/Footer/footer

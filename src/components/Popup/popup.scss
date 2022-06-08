@@ -1,0 +1,32 @@
+.popup {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+
+  &__text {
+    position: absolute;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      visibility 0.3s ease-in-out,
+      opacity 0.3s ease-in-out;
+  }
+
+  &__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(30px);
+    height: rem(30px);
+    font-size: rem(18px);
+    background-color: var(--color-primary);
+    border-radius: 100%;
+
+    &:hover + .popup__text {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

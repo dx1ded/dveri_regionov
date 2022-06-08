@@ -1,17 +1,18 @@
 .tabs {
   display: grid;
   gap: var(--grid-gap);
+  padding: 0;
 
   &__item {
     display: block;
-    padding: rem(18px) 0;
-    font-size: rem(20px);
+    padding: rem(14px) 0;
+    line-height: 1;
     color: var(--color-primary);
     text-align: center;
     text-decoration: none;
     background-color: var(--color-light);
     border: 1px solid currentcolor;
-    border-radius: 10px;
+    border-radius: 5px;
     transition:
       color 0.3s ease-in-out,
       background-color 0.3s ease-in-out,
@@ -24,7 +25,7 @@
   }
 }
 
-main > *[id] {
+[data-tab-content] {
   position: absolute;
   visibility: visible;
   opacity: 0;
