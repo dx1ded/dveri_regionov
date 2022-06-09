@@ -30,14 +30,14 @@ section.card
           .product-price__column
             small.product-price__type.text.text--sm Розн. цена за текущую комплектацию
             h3.product-price__count.title.title--sm.title--black 40 203 ₽
-            button.product-price__cta.btn-reset.btn.btn--secondary Вызов замерщика
+            button.product-price__cta.btn-reset.btn.btn--thindly Вызов замерщика
         .product__sizes
-          button.product__size.product__size--active.btn-reset 1900 x 550
-          button.product__size.btn-reset 1900 x 600
-          button.product__size.btn-reset 2000 x 600
-          button.product__size.btn-reset 2000 x 700
-          button.product__size.btn-reset 2000 x 800
-          button.product__size.btn-reset 2000 x 900
+          button.product__size.product__size--active.btn-reset.btn.btn--secondary 1900 x 550
+          button.product__size.btn-reset.btn.btn--secondary 1900 x 600
+          button.product__size.btn-reset.btn.btn--secondary 2000 x 600
+          button.product__size.btn-reset.btn.btn--secondary 2000 x 700
+          button.product__size.btn-reset.btn.btn--secondary 2000 x 800
+          button.product__size.btn-reset.btn.btn--secondary 2000 x 900
         .product__colors
           button.product__color.btn-reset(aria-label="Белый глянец")
             +image("product-colors/white.jpg")(aria-hidden="true")
@@ -47,14 +47,8 @@ section.card
             +image("product-colors/black.jpg")(aria-hidden="true")
         .product__info
           +tabs(
-            {
-              name: "Описание",
-              hash: "#description"
-            },
-            {
-              name: "Комплектующие",
-              hash: "#equipment"
-            }
+            { name: "Описание", hash: "#description" },
+            { name: "Комплектующие", hash: "#equipment" }
           )
           table.product-table#description(data-tab-content)
             tr.product-table__row
@@ -91,39 +85,39 @@ section.card
             .product-complect__item
               dt.product-complect__item-name.title.title--sm Наличник
               dl.product-complect__item-description.text.text--md Наличник прямой HGX PET, заподлицо, черный глянец 90*10*2150, телескоп (внешний) - 1451 руб. Наличник прямой PET, черный глянец 80*10*2150, телескоп (внутренний) - 1305 руб.
-      .product__equipment
-        .product__equipment-item
-          .product__equipment-item__top
-            h4.product__equipment-item__name.title.title--sm.title--light Полотно
+      .product__equipments
+        .product-equipment
+          .product-equipment__top
+            h4.product-equipment__name.title.title--sm.title--black Полотно
             +popup("Коробка прямая сендвич HGX PET белый глянец 81*42*2150, телескоп с упл. комп 2,5шт арт. F0000084830")
-          .product__equipment-item__bottom
-            p.product__equipment-item__price.text.text--md.text--light 25360 ₽
+          .product-equipment__bottom
+            p.product-equipment__price.text.text--md.text--black 25360 ₽
             +counter
-        .product__equipment-item
-          .product__equipment-item__top
-            h4.product__equipment-item__name.title.title--sm.title--light Полотно
+        .product-equipment
+          .product-equipment__top
+            h4.product-equipment__name.title.title--sm.title--black Полотно
             +popup("Коробка прямая сендвич HGX PET белый глянец 81*42*2150, телескоп с упл. комп 2,5шт арт. F0000084830")
-          .product__equipment-item__bottom
-            p.product__equipment-item__price.text.text--md.text--light 25360 ₽
+          .product-equipment__bottom
+            p.product-equipment__price.text.text--md.text--black 25360 ₽
             +counter
-        .product__equipment-item
-          .product__equipment-item__top
-            h4.product__equipment-item__name.title.title--sm.title--light Полотно
+        .product-equipment
+          .product-equipment__top
+            h4.product-equipment__name.title.title--sm.title--black Полотно
             +popup("Коробка прямая сендвич HGX PET белый глянец 81*42*2150, телескоп с упл. комп 2,5шт арт. F0000084830")
-          .product__equipment-item__bottom
-            p.product__equipment-item__price.text.text--md.text--light 25360 ₽
+          .product-equipment__bottom
+            p.product-equipment__price.text.text--md.text--black 25360 ₽
             +counter
-        .product__equipment-item
-          .product__equipment-item__top
-            h4.product__equipment-item__name.title.title--sm.title--light Полотно
+        .product-equipment
+          .product-equipment__top
+            h4.product-equipment__name.title.title--sm.title--black Полотно
             +popup("Коробка прямая сендвич HGX PET белый глянец 81*42*2150, телескоп с упл. комп 2,5шт арт. F0000084830")
-          .product__equipment-item__bottom
-            p.product__equipment-item__price.text.text--md.text--light 25360 ₽
+          .product-equipment__bottom
+            p.product-equipment__price.text.text--md.text--black 25360 ₽
             +counter
-        .product__equipment-item
-          .product__equipment-item__top
-            h4.product__equipment-item__name.title.title--sm.title--light Полотно
+        .product-equipment
+          .product-equipment__top
+            h4.product-equipment__name.title.title--sm.title--black Полотно
             +popup("Коробка прямая сендвич HGX PET белый глянец 81*42*2150, телескоп с упл. комп 2,5шт арт. F0000084830")
-          .product__equipment-item__bottom
-            p.product__equipment-item__price.text.text--md.text--light 25360 ₽
+          .product-equipment__bottom
+            p.product-equipment__price.text.text--md.text--black 25360 ₽
             +counter

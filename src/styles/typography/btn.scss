@@ -1,5 +1,6 @@
 .btn {
   display: inline-block;
+  border: 1px solid;
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
 
@@ -17,10 +18,18 @@
   &--primary {
     color: var(--color-light);
     background-color: var(--color-japonica);
+    border-color: var(--color-japonica);
   }
 
   &--secondary {
+    color: var(--color-primary);
+    background-color: var(--color-light);
+    border-color: currentcolor;
+  }
+
+  &--thindly {
     color: var(--color-light);
     background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
   }
 }

@@ -56,9 +56,6 @@
 
   &__size {
     padding: rem(12px) 0;
-    color: var(--color-primary);
-    border: 1px solid currentcolor;
-    border-radius: 5px;
 
     &--active {
       color: var(--color-light);
@@ -115,7 +112,7 @@
     padding: rem(8px) 0;
     margin-bottom: rem(10px);
     font-weight: 400;
-    background-color: #e4e4e4;
+    background-color: #e8e7e7;
     border-radius: 5px;
   }
 
@@ -149,10 +146,11 @@
   }
 }
 
-.product__equipment-item {
+.product-equipment {
   padding: rem(20px);
-  background-color: var(--color-japonica);
+  background-color: var(--color-light);
   border-radius: 8px;
+  box-shadow: 0 0 4px rgb(0 0 0 / 20%);
 
   &__top {
     margin-bottom: rem(20px);
