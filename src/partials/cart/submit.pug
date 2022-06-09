@@ -1,0 +1,19 @@
+include @cmps/Card/card
+include @cmps/Select/select
+
+section.submit
+  .container
+    +card
+      +card-title("Оформить заказ")
+      form.submit-form
+        input.submit-form__input(type="text" placeholder="Имя" required)
+        input.submit-form__input(type="text" placeholder="Фамилия" required)
+        input.submit-form__input(type="tel" placeholder="Телефон" required)
+        input.submit-form__input(type="email" placeholder="Email-адрес" required)
+        +select(0, "Тип получения",  "Самовывоз", "Доставка")
+        +select(0, "Адрес доставки", "ул. Петровского 1, Москва", "ул. Петровского 1, Москва", "ул. Петровского 1, Москва")
+        .submit-form__wrapper
+          .submit-form__info
+            p.submit-form__conclusion Итого:
+            h3.submit-form__price.title.title--sm.title--black 13 950 руб.
+          input.submit-form__submit.btn-reset.btn.btn--primary(type="submit" value="Оформить заказ")

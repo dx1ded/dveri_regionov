@@ -1,0 +1,7 @@
+mixin select(activeIndex, ...items)
+  .select
+    span.select__display= items[activeIndex]
+    ul.select__list.list-reset
+      - items.splice(activeIndex, 0)
+      each item in items
+        li.select__item= item

@@ -1,0 +1,21 @@
+@import "../mixins";
+
+// Components
+
+@import "@cmps/Header/header";
+@import "@cmps/Footer/footer";
+@import "@cmps/Breadcrumbs/breadcrumbs";
+@import "@cmps/Card/card";
+
+// Partials
+
+@import "@partials/cart/list";
+@import "@partials/cart/submit";
+
+section {
+  margin-bottom: rem(30px);
+}
+
+section:last-child {
+  margin-bottom: rem(90px);
+}

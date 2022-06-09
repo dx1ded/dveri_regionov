@@ -1,0 +1,24 @@
+extends layouts/page
+include _mixins
+
+block config
+  - page.title = "Корзина - Дверной Регион"
+
+block styles
+  +style("styles/cart.css")
+
+include @cmps/Breadcrumbs/breadcrumbs
+
+block partials
+  include @cmps/Header/header
+  main
+    +breadcrumbs(
+      { name: "Главная", path: "/" },
+      { name: "Корзина", path: "/cart" }
+    )
+    include @partials/cart/list
+    include @partials/cart/submit
+  include @cmps/Footer/footer
+
+block scripts
+  +script("scripts/cart.js")

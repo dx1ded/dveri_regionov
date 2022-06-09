@@ -1,0 +1,60 @@
+@import "@cmps/Counter/counter";
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: rem(16px) rem(30px);
+  background-color: var(--color-light);
+  border-radius: 10px;
+  box-shadow: 0 0 4px rgb(0 0 0 / 20%);
+
+  &__content {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: rem(50px);
+      margin-right: rem(30px);
+    }
+  }
+
+  &__name {
+    max-width: em(320px, 14px);
+  }
+
+  &__price {
+    font-size: rem(18px);
+  }
+
+  &__delete {
+    position: relative;
+    width: rem(24px);
+    height: rem(24px);
+    transform: rotate(45deg);
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      display: block;
+      width: 100%;
+      height: rem(2px);
+      content: "";
+      background-color: var(--color-japonica);
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      transform: translateY(-50%) rotate(90deg);
+    }
+  }
+
+  .counter {
+    grid-template-columns: rem(40px) rem(50px) rem(40px);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: rem(24px);
+  }
+}

@@ -1,0 +1,26 @@
+.select {
+  font-size: rem(18px);
+  color: #757575;
+  background-color: #fcfcfc;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+
+  &__display {
+    display: inline-block;
+    padding: rem(18px) rem(30px);
+    cursor: pointer;
+  }
+
+  &__list {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      visibility 0.3s ease-in-out,
+      opacity 0.3s ease-in-out;
+  }
+
+  &__item {
+    cursor: pointer;
+  }
+}

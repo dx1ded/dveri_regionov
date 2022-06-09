@@ -1,7 +1,7 @@
 .counter {
   display: grid;
   grid-template-columns: rem(40px) rem(30px) rem(40px);
-  grid-auto-rows: rem(36px);
+  grid-auto-rows: rem(40px);
   background-color: var(--color-light);
   border-radius: 5px;
   box-shadow: 0 0 2px rgb(0 0 0 / 40%);

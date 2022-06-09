@@ -1,0 +1,32 @@
+include @cmps/Card/card
+include @cmps/Counter/counter
+
+section.list
+  .container
+    +card
+      +card-title("3 товаров в корзине")
+      .card__wrapper
+        .cart-item
+          .cart-item__content
+            +image("product.jpg")
+            h3.cart-item__name.text.text--sm.text--black Дверь HGX-1 Белый глянец размер 200 х 90 см.
+          p.cart-item__product__sku F0000083881
+          +counter
+          h4.cart-item__price 3 119 ₽
+          button.cart-item__delete.btn-reset(aria-label="Удалить товар из корзины")
+        .cart-item
+          .cart-item__content
+            +image("product.jpg")
+            h3.cart-item__name.text.text--sm.text--black Дверь HGX-1 Белый глянец размер 200 х 90 см.
+          p.cart-item__product__sku F0000083881
+          +counter
+          h4.cart-item__price 3 119 ₽
+          button.cart-item__delete.btn-reset(aria-label="Удалить товар из корзины")
+        .cart-item
+          .cart-item__content
+            +image("product.jpg")
+            h3.cart-item__name.text.text--sm.text--black Дверь HGX-1 Белый глянец размер 200 х 90 см.
+          p.cart-item__product__sku F0000083881
+          +counter
+          h4.cart-item__price 3 119 ₽
+          button.cart-item__delete.btn-reset(aria-label="Удалить товар из корзины")
