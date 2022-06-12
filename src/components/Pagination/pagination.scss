@@ -14,13 +14,15 @@
 
     &:not(:last-child) {
       margin-right: rem(20px);
+
+      @include mobile {
+        margin-right: rem(16px);
+      }
     }
 
-    &--active {
-      a {
-        font-weight: 500;
-        color: var(--color-japonica);
-      }
+    &--active a {
+      font-weight: 500;
+      color: var(--color-japonica);
     }
   }
 }

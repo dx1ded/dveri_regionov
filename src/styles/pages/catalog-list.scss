@@ -13,4 +13,12 @@
 
 .pagination {
   margin: rem(60px) 0 rem(90px);
+
+  @include sm-laptop {
+    margin: rem(50px) 0;
+  }
+
+  @include mobile {
+    margin: rem(40px) 0;
+  }
 }

@@ -3,7 +3,8 @@
 .list {
   &__container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(rem(300px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(rem(280px), rem(400px)));
     gap: rem(25px);
+    justify-content: center;
   }
 }

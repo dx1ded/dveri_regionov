@@ -3,9 +3,22 @@
 
   &__container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(rem(400px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(rem(340px), 1fr));
     grid-auto-rows: rem(400px);
     gap: var(--grid-gap);
+
+    @include tablet {
+      grid-template-columns: repeat(auto-fit, minmax(rem(290px), 1fr));
+      grid-auto-rows: rem(300px);
+    }
+  }
+
+  @include sm-laptop {
+    margin-bottom: rem(50px);
+  }
+
+  @include mobile {
+    margin-bottom: rem(40px);
   }
 }
 
@@ -21,20 +34,25 @@
     padding: rem(25px);
     border-radius: 0 0 10px 10px;
     transition: background-color 0.3s ease-in-out;
+
+    @include sm-laptop {
+      padding: rem(20px);
+    }
   }
 
   &__background {
     position: absolute;
     top: 0;
     left: 0;
+    object-fit: cover;
     z-index: -1;
     width: 100%;
     height: 100%;
     border-radius: inherit;
   }
 
-  &:hover {
-    .types-item__name {
+  &:hover & {
+    &__name {
       background-color: var(--color-secondary);
     }
   }
