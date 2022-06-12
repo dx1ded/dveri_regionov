@@ -10,10 +10,34 @@
 
   &--md {
     font-size: rem(30px);
+
+    @include sm-laptop {
+      font-size: rem(24px);
+    }
+
+    @include tablet {
+      font-size: rem(22px);
+    }
+
+    @include mobile {
+      font-size: rem(20px);
+    }
   }
 
   &--sm {
     font-size: rem(24px);
+
+    @include sm-laptop {
+      font-size: rem(20px);
+    }
+
+    @include tablet {
+      font-size: rem(18px);
+    }
+
+    @include mobile {
+      font-size: rem(16px);
+    }
   }
 
   // Colors

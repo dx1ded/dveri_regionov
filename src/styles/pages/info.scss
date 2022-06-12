@@ -8,20 +8,33 @@
 @import "@cmps/Tabs/tabs";
 @import "@cmps/Card/card";
 
-section {
-  margin-bottom: rem(30px);
-}
-
-section:last-child {
-  margin-bottom: rem(90px);
-}
-
 .tabs {
   grid-template-columns: repeat(2, 1fr);
   margin-bottom: rem(50px);
+
+  @include tablet {
+    margin-bottom: rem(40px);
+  }
+
+  @include resolution(500px) {
+    grid-template-columns: 1fr;
+    margin-bottom: rem(30px);
+  }
 }
 
 #map {
   width: 100%;
   height: rem(600px);
+
+  @include l-tablet {
+    height: rem(500px);
+  }
+
+  @include tablet {
+    height: rem(350px);
+  }
+
+  @include l-mobile {
+    height: rem(280px);
+  }
 }

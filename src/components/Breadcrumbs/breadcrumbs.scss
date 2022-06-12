@@ -13,5 +13,19 @@
       vertical-align: middle;
       content: "/";
     }
+
+    @include resolution(500px) {
+      &::after {
+        font-size: rem(12px);
+      }
+
+      a {
+        font-size: rem(12px);
+      }
+    }
+  }
+
+  @include sm-laptop {
+    margin: rem(20px) 0;
   }
 }

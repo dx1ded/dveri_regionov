@@ -6,11 +6,3 @@
 @import "@cmps/Footer/footer";
 @import "@cmps/Breadcrumbs/breadcrumbs";
 @import "@cmps/Card/card";
-
-section:not(:last-child) {
-  margin-bottom: rem(30px);
-}
-
-section:last-child {
-  margin-bottom: rem(90px);
-}

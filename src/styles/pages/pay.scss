@@ -7,11 +7,3 @@
 @import "@cmps/Breadcrumbs/breadcrumbs";
 @import "@cmps/Card/card";
 @import "@cmps/Dropdown/dropdown";
-
-section:not(:last-child) {
-  margin-bottom: rem(30px);
-}
-
-section:last-child {
-  margin-bottom: rem(90px);
-}
