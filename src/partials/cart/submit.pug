@@ -11,7 +11,7 @@ section.submit
         input.submit-form__input(type="tel" placeholder="Телефон" required)
         input.submit-form__input(type="email" placeholder="Email-адрес" required)
         +select(0, "Тип получения",  "Самовывоз", "Доставка")
-        +select(0, "Адрес доставки", "ул. Петровского 1, Москва", "ул. Петровского 1, Москва", "ул. Петровского 1, Москва")
+        input.submit-form__input(type="text" placeholder="Адрес доставки" required)
         .submit-form__wrapper
           .submit-form__info
             p.submit-form__conclusion Итого:

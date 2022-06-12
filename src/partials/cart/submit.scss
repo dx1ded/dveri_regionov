@@ -3,11 +3,11 @@
 .submit-form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--grid-gap);
+  gap: rem(20px) var(--grid-gap);
 
   &__input {
     grid-column: span 1;
-    padding: rem(18px) rem(30px);
+    padding: rem(20px) rem(30px);
     font-size: rem(18px);
     background-color: #fcfcfc;
     border: 1px solid #e4e4e4;
@@ -24,7 +24,7 @@
   }
 
   &__submit {
-    padding: rem(14px) rem(20px);
+    padding: rem(14px) rem(26px);
     font-size: rem(18px);
   }
 }
