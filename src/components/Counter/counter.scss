@@ -16,6 +16,10 @@
     &--increment {
       order: 3;
     }
+
+    @include sm-laptop {
+      font-size: rem(16px);
+    }
   }
 
   &__display {
@@ -29,5 +33,14 @@
     &::-webkit-inner-spin-button {
       appearance: none;
     }
+
+    @include sm-laptop {
+      font-size: rem(12px);
+    }
+  }
+
+  @include sm-laptop {
+    grid-template-columns: rem(30px) rem(20px) rem(30px);
+    grid-auto-rows: rem(32px);
   }
 }

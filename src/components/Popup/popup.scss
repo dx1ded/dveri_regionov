@@ -6,8 +6,8 @@
 
   &__text {
     position: absolute;
-    top: rem(-10px);
-    left: rem(-10px);
+    right: rem(-10px);
+    bottom: rem(-10px);
     width: rem(240px);
     padding: rem(16px);
     font-size: rem(14px);
@@ -21,10 +21,10 @@
     transition:
       visibility 0.3s ease-in-out,
       opacity 0.3s ease-in-out;
-    transform: translateY(-100%);
+    transform: translateY(100%);
   }
 
-  &__cta {
+  &__open {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,6 +37,12 @@
     &:hover + .popup__text {
       visibility: visible;
       opacity: 1;
+    }
+
+    @include sm-laptop {
+      width: rem(20px);
+      height: rem(20px);
+      font-size: rem(14px);
     }
   }
 }

@@ -10,14 +10,27 @@
 
   &__sku {
     margin-bottom: rem(8px);
+
+    @include sm-laptop {
+      font-size: rem(14px);
+    }
   }
 
   &__name {
     margin-bottom: rem(15px);
+
+    @include sm-laptop {
+      margin-bottom: rem(10px);
+      font-size: rem(20px);
+    }
   }
 
   &__tags {
     margin-bottom: rem(40px);
+
+    @include sm-laptop {
+      margin-bottom: rem(30px);
+    }
   }
 
   &__tag {
@@ -42,16 +55,29 @@
     &--new {
       background-color: var(--color-secondary);
     }
+
+    @include sm-laptop {
+      padding: rem(8px) rem(16px);
+      font-size: rem(12px);
+    }
   }
 
   &__sizes {
     display: grid;
-    grid-template-columns: repeat(3, minmax(rem(100px), 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--grid-gap);
     padding: rem(20px) 0;
     margin-bottom: rem(20px);
     border: solid #e4e4e4;
     border-width: 1px 0;
+
+    @include sm-laptop {
+      gap: rem(10px);
+    }
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__size {
@@ -60,6 +86,11 @@
     &--active {
       color: var(--color-light);
       background-color: var(--color-japonica);
+    }
+
+    @include sm-laptop {
+      padding: rem(10px) 0;
+      font-size: rem(14px);
     }
   }
 
@@ -70,13 +101,73 @@
     padding-bottom: rem(20px);
     margin-bottom: rem(30px);
     border-bottom: 1px solid #e4e4e4;
+
+    @include sm-laptop {
+      grid-template-columns: repeat(auto-fit, rem(40px));
+      margin-bottom: rem(20px);
+    }
   }
 
   &__color img { width: 100%; }
 
+  &__column {
+    @include tablet {
+      flex: 1 1 rem(326px);
+    }
+  }
+
+  &__equipments {
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(rem(200px), 1fr));
+      gap: rem(20px);
+      width: 100%;
+      margin-top: rem(30px);
+    }
+
+    @include resolution(530px) {
+      margin-top: rem(20px);
+    }
+  }
+
   .tabs {
     grid-template-columns: repeat(2, 1fr);
+    padding: 0;
     margin-bottom: rem(30px);
+
+    &__item {
+      @include sm-laptop {
+        padding: rem(14px) 0;
+      }
+
+      @include l-tablet {
+        font-size: rem(14px);
+      }
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @include resolution(1250px) {
+    grid-template-columns: rem(200px) 1fr rem(250px);
+  }
+
+  @include sm-laptop {
+    grid-template-columns: rem(150px) 1fr rem(200px);
+    gap: rem(25px);
+    margin-bottom: rem(50px);
+  }
+
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  @include mobile {
+    margin-bottom: rem(40px);
   }
 }
 
@@ -85,15 +176,53 @@
     margin-bottom: rem(40px);
 
     img { width: 100%; }
+
+    @include sm-laptop {
+      margin-bottom: rem(20px);
+    }
+
+    @include resolution(530px) {
+      margin: 0 rem(20px) 0 0;
+    }
   }
 
   &__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, rem(60px));
     gap: rem(20px);
+
+    @include resolution(1250px) {
+      grid-template-columns: repeat(auto-fit, rem(52px));
+    }
+
+    @include sm-laptop {
+      grid-template-columns: repeat(auto-fit, rem(40px));
+      gap: rem(15px);
+    }
+
+    @include resolution(530px) {
+      gap: rem(10px);
+      height: rem(340px);
+      overflow-y: auto;
+    }
   }
 
   &__item img { width: 100%; }
+
+  @include tablet {
+    flex: 0 0 rem(200px);
+    margin-right: rem(20px);
+  }
+
+  @include resolution(660px) {
+    flex: 0 0 rem(150px);
+  }
+
+  @include resolution(530px) {
+    display: flex;
+    flex: 1 0 rem(200px);
+    margin: 0 0 rem(30px);
+  }
 }
 
 .product-price {
@@ -106,6 +235,18 @@
   &__type {
     display: inline-block;
     margin-bottom: rem(10px);
+
+    @include l-tablet {
+      font-size: rem(12px);
+    }
+
+    @include resolution(840px) {
+      font-size: rem(10px);
+    }
+
+    @include sm-mobile {
+      font-size: rem(8.5px);
+    }
   }
 
   &__count {
@@ -114,11 +255,25 @@
     font-weight: 400;
     background-color: #e8e7e7;
     border-radius: 5px;
+
+    @include sm-laptop {
+      font-size: rem(16px);
+    }
   }
 
   &__cta {
     width: 100%;
     padding: rem(14px) 0;
+
+    @include sm-laptop {
+      padding: rem(10px) 0;
+      font-size: rem(14px);
+    }
+  }
+
+  @include sm-laptop {
+    gap: rem(10px);
+    margin-bottom: rem(20px);
   }
 }
 
@@ -133,16 +288,35 @@
     padding: rem(16px);
     line-height: 1.4;
     border: 1px solid #e4e4e4;
+
+    @include sm-laptop {
+      padding: rem(10px);
+      font-size: rem(14px);
+    }
   }
 }
 
 .product-complect {
   &__item:not(:last-child) {
-    margin-bottom: rem(20px);
+    margin-bottom: rem(30px);
+
+    @include l-tablet {
+      margin-bottom: rem(20px);
+    }
   }
 
   &__item-name {
     margin-bottom: rem(8px);
+
+    @include l-tablet {
+      font-size: rem(16px);
+    }
+  }
+
+  &__item-description {
+    @include l-tablet {
+      font-size: rem(14px);
+    }
   }
 }
 
@@ -156,8 +330,24 @@
     margin-bottom: rem(20px);
   }
 
+  &__name {
+    @include sm-laptop {
+      font-size: rem(14px);
+    }
+  }
+
+  &__price {
+    @include sm-laptop {
+      font-size: rem(14px);
+    }
+  }
+
   &:not(:last-child) {
     margin-bottom: rem(20px);
+
+    @include tablet {
+      margin: 0;
+    }
   }
 
   &__top,
@@ -165,5 +355,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  @include sm-laptop {
+    padding: rem(16px);
   }
 }
