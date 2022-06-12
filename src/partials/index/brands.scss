@@ -13,6 +13,14 @@
 
   &__slider {
     margin: 0 rem(60px);
+
+    @include sm-laptop {
+      margin: 0 rem(20px);
+    }
+
+    @include resolution(460px) {
+      margin: 0 rem(10px);
+    }
   }
 
   &__nav {
@@ -29,9 +37,43 @@
       height: rem(20px);
       stroke: var(--color-light);
     }
+
+    @include sm-laptop {
+      width: rem(40px);
+      height: rem(40px);
+
+      svg {
+        width: rem(16px);
+        height: rem(16px);
+      }
+    }
+
+    @include mobile {
+      width: rem(30px);
+      height: rem(30px);
+
+      svg {
+        width: rem(12px);
+        height: rem(12px);
+      }
+    }
   }
 }
 
 .brands-slide {
   text-align: center;
+
+  img {
+    @include resolution(1200px) {
+      height: rem(70px);
+    }
+
+    @include resolution(460px) {
+      height: rem(60px);
+    }
+
+    @include mobile {
+      height: rem(46px);
+    }
+  }
 }

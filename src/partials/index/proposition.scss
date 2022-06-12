@@ -1,13 +1,26 @@
 @import "@cmps/Product/product";
 
 .proposition {
-  margin-bottom: rem(100px);
+  margin-bottom: rem(90px);
 
   &__items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, rem(350px));
+    grid-template-columns: repeat(auto-fit, minmax(0, rem(350px)));
     gap: rem(30px);
     justify-content: center;
+
+    @include sm-laptop {
+      grid-template-columns: repeat(auto-fit, minmax(0, rem(290px)));
+      gap: rem(20px);
+    }
+  }
+
+  @include sm-laptop {
+    margin-bottom: rem(50px);
+  }
+
+  @include mobile {
+    margin-bottom: rem(40px);
   }
 }
 
@@ -16,7 +29,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: rem(60px);
-  border: solid #e9ebee;
+  border: solid #e4e4e4;
   border-width: 1px 0;
 
   &__item {
@@ -35,5 +48,39 @@
     &--active {
       color: var(--color-black);
     }
+
+    @include sm-laptop {
+      padding: rem(24px) 0;
+      font-size: rem(16px);
+    }
+
+    @include tablet {
+      padding: rem(20px) 0;
+      font-size: rem(14px);
+
+      &:not(:last-child) {
+        margin-right: rem(50px);
+      }
+    }
+
+    @include resolution(480px) {
+      font-size: rem(12px);
+
+      &:not(:last-child) {
+        margin-right: rem(30px);
+      }
+    }
+
+    @include sm-mobile {
+      font-size: rem(11px);
+
+      &:not(:last-child) {
+        margin-right: rem(20px);
+      }
+    }
+  }
+
+  @include sm-laptop {
+    margin-bottom: rem(40px);
   }
 }

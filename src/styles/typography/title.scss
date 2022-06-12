@@ -6,6 +6,18 @@
 
   &--xl {
     font-size: rem(36px);
+
+    @include sm-laptop {
+      font-size: rem(30px);
+    }
+
+    @include tablet {
+      font-size: rem(26px);
+    }
+
+    @include mobile {
+      font-size: rem(24px);
+    }
   }
 
   &--md {

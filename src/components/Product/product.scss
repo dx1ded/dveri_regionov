@@ -11,10 +11,25 @@
     img {
       width: rem(150px);
     }
+
+    @include sm-laptop {
+      margin-bottom: rem(20px);
+    }
+
+    @include tablet {
+      img {
+        width: rem(100px);
+      }
+    }
   }
 
-  &__title {
-    margin-bottom: rem(40px);
+  &__name {
+    margin-bottom: rem(30px);
+
+    @include sm-laptop {
+      margin-bottom: rem(20px);
+      font-size: rem(15px);
+    }
   }
 
   &__wrapper {
@@ -31,9 +46,18 @@
       width: rem(16px);
       height: rem(16px);
     }
+
+    @include sm-laptop {
+      padding: 0.8rem 1.6rem;
+      font-size: rem(10px);
+    }
   }
 
   &__price {
     font-size: rem(18px);
+
+    @include sm-laptop {
+      font-size: rem(15px);
+    }
   }
 }

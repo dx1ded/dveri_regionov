@@ -11,6 +11,11 @@
     font-size: rem(12px);
     font-weight: 700;
     text-transform: uppercase;
+
+    @include tablet {
+      padding: 0.7rem 1.6rem;
+      font-size: rem(10px);
+    }
   }
 
   // Variants

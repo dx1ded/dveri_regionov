@@ -4,23 +4,59 @@
   background-color: var(--color-primary);
 
   &__title {
-    margin-bottom: rem(40px);
+    margin-bottom: rem(60px);
+
+    @include sm-laptop {
+      margin-bottom: rem(40px);
+    }
   }
 
   &__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0 rem(-30px) rem(-30px) 0;
+
+    @include sm-laptop {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  @include sm-laptop {
+    padding: rem(50px) 0;
+    margin-bottom: rem(50px);
+  }
+
+  @include mobile {
+    padding: rem(40px) 0;
+    margin-bottom: rem(40px);
   }
 }
 
 .benefit {
+  margin: 0 rem(30px) rem(30px) 0;
+
   &__icon {
     margin-bottom: rem(10px);
 
     svg {
       width: rem(60px);
       height: rem(60px);
+    }
+
+    @include sm-laptop {
+      svg {
+        width: rem(40px);
+        height: rem(40px);
+      }
+    }
+
+    @include mobile {
+      svg {
+        width: rem(30px);
+        height: rem(30px);
+      }
     }
   }
 
