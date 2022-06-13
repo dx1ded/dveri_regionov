@@ -14,18 +14,22 @@ mixin burger
         li.burger-nav__item
           a.link-reset.text.text--sm(href="/catalog") Каталог
         li.burger-nav__item
-          a.link-reset.text.text--sm(href="#") Акции и скидки
-        li.burger-nav__item
           a.link-reset.text.text--sm(href="/cooperation") Сотрудничество
         li.burger-nav__item
           a.link-reset.text.text--sm(href="/info#where-to-buy") Где купить
         li.burger-nav__item
-          a.link-reset.text.text--sm(href="#") Сервис
+          a.link-reset.text.text--sm(href="/delivery") Доставка
+        li.burger-nav__item
+          a.link-reset.text.text--sm(href="/installation") Монтаж
+        li.burger-nav__item
+          a.link-reset.text.text--sm(href="/pay") Оплата
+        li.burger-nav__item
+          a.link-reset.text.text--sm(href="/garantee") Гарантия
         li.burger-nav__item
           a.link-reset.text.text--sm(href="/info#contacts") Контакты
 
 mixin burger-toggle
   button.burger__toggle.btn-reset#burger-toggle(aria-label="Открыть / закрыть меню")
-    span
-    span
-    span
+    span(aria-hidden="true")
+    span(aria-hidden="true")
+    span(aria-hidden="true")
