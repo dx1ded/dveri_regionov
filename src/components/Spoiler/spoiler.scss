@@ -1,4 +1,4 @@
-.dropdown {
+.spoiler {
   &__open {
     display: flex;
     align-items: center;
@@ -28,11 +28,11 @@
   }
 
   &--opened {
-    .dropdown__open::after {
+    .spoiler__open::after {
       transform: rotate(180deg);
     }
 
-    .dropdown__content {
+    .spoiler__content {
       position: static;
       margin-top: rem(20px);
       visibility: visible;
