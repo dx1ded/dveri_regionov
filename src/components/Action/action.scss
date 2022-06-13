@@ -7,6 +7,7 @@
     width: rem(18px);
     height: rem(18px);
     margin-right: rem(14px);
+    fill: var(--color-japonica);
 
     @include sm-laptop {
       width: rem(14px);
