@@ -13,6 +13,15 @@
     border: 1px solid #e4e4e4;
     border-radius: 5px;
     outline: none;
+
+    @include sm-laptop {
+      padding: rem(16px) rem(24px);
+      font-size: rem(14px);
+    }
+
+    @include resolution(520px) {
+      grid-column: span 2;
+    }
   }
 
   &__wrapper {
@@ -21,10 +30,27 @@
     align-items: center;
     justify-content: space-between;
     margin-top: rem(30px);
+
+    @include sm-laptop {
+      margin-top: rem(16px);
+    }
   }
 
   &__submit {
     padding: rem(14px) rem(26px);
     font-size: rem(18px);
+
+    @include sm-laptop {
+      font-size: rem(14px);
+    }
+
+    @include mobile {
+      padding: rem(12px) rem(20px);
+      font-size: rem(12px);
+    }
+  }
+
+  @include sm-laptop {
+    gap: var(--grid-gap);
   }
 }

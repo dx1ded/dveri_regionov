@@ -16,15 +16,50 @@
     img {
       width: rem(50px);
       margin-right: rem(30px);
+
+      @include sm-laptop {
+        width: rem(36px);
+        margin-right: rem(20px);
+      }
+
+      @include tablet {
+        width: rem(30px);
+      }
     }
   }
 
   &__name {
     max-width: em(320px, 14px);
+
+    @include sm-laptop {
+      font-size: rem(11px);
+    }
+
+    @include resolution(660px) {
+      max-width: em(240px, 14px);
+    }
+  }
+
+  &__sku {
+    @include sm-laptop {
+      font-size: rem(14px);
+    }
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__price {
     font-size: rem(18px);
+
+    @include sm-laptop {
+      font-size: rem(16px);
+    }
+
+    @include resolution(660px) {
+      font-size: rem(14px);
+    }
   }
 
   &__delete {
@@ -48,13 +83,46 @@
     &::after {
       transform: translateY(-50%) rotate(90deg);
     }
+
+    @include sm-laptop {
+      width: rem(16px);
+      height: rem(16px);
+    }
   }
 
   .counter {
     grid-template-columns: rem(40px) rem(50px) rem(40px);
+
+    @include sm-laptop {
+      grid-template-columns: rem(30px) rem(40px) rem(30px);
+    }
+
+    @include resolution(660px) {
+      grid-template-columns: rem(30px) rem(30px) rem(30px);
+    }
   }
 
   &:not(:last-child) {
     margin-bottom: rem(24px);
+  }
+
+  &__content,
+  &__sku,
+  &__price,
+  &__delete,
+  .counter {
+    margin: 0 rem(20px) rem(20px) 0;
+  }
+
+  @include tablet {
+    padding: rem(16px);
+
+    &:not(:last-child) {
+      margin-bottom: rem(20px);
+    }
+  }
+
+  @include resolution(576px) {
+    flex-wrap: wrap;
   }
 }
