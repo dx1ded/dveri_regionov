@@ -1,9 +1,11 @@
 @import "@cmps/Product/product";
+@import "@cmps/Loader/loader";
 
 .proposition {
   margin-bottom: rem(90px);
 
   &__items {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0, rem(350px)));
     gap: rem(30px);
@@ -25,6 +27,7 @@
 }
 
 .proposition-filter {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,4 +86,8 @@
   @include sm-laptop {
     margin-bottom: rem(40px);
   }
+}
+
+.loader {
+  min-height: rem(400px);
 }

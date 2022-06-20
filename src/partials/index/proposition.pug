@@ -4,10 +4,6 @@ section.proposition
   h2.visually-hidden Пропозиции компании
   .container
     .proposition-filter
-      button.proposition-filter__item.proposition-filter__item--active.btn-reset Новинки
-      button.proposition-filter__item.btn-reset Лидеры продаж
-      button.proposition-filter__item.btn-reset Распродажа
+      button.proposition-filter__item.proposition-filter__item--active.btn-reset(data-type="new") Новинки
+      button.proposition-filter__item.btn-reset(data-type="sale") Распродажа
     .proposition__items
-      +product
-      +product
-      +product

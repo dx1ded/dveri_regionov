@@ -14,8 +14,7 @@ block partials
   main
     +breadcrumbs(
       { name: "Главная", path: "/" },
-      { name: "Каталог", path: "/catalog" },
-      { name: "<Тип>", path: "/catalog/[type]" }
+      { name: "Каталог", path: "/catalog" }
     )
     include @partials/catalog-list/list
     include @cmps/Pagination/pagination

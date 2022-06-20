@@ -1,7 +1,9 @@
 // Components
 
 import "@cmps/Burger/burger"
-import "@cmps/Tabs/tabs"
+import { initializeTabs } from "@cmps/Tabs/tabs"
+
+initializeTabs()
 
 // Partials
 

@@ -6,14 +6,14 @@ section.submit
     +card
       +card-title("Оформить заказ")
       form.submit-form
-        input.submit-form__input(type="text" placeholder="Имя" required)
-        input.submit-form__input(type="text" placeholder="Фамилия" required)
-        input.submit-form__input(type="tel" placeholder="Телефон" required)
-        input.submit-form__input(type="email" placeholder="Email-адрес" required)
+        input.submit-form__input(type="text" name="name" placeholder="Имя" required)
+        input.submit-form__input(type="text" name="lastName" placeholder="Фамилия" required)
+        input.submit-form__input(type="tel" name="phone" placeholder="Телефон" required)
+        input.submit-form__input(type="email" name="email" placeholder="Email-адрес" required)
         +select(0, "Тип получения",  "Самовывоз", "Доставка")
-        input.submit-form__input(type="text" placeholder="Адрес доставки" required)
+        input.submit-form__input(type="text" name="address" placeholder="Адрес доставки" required)
         .submit-form__wrapper
           .submit-form__info
             p.submit-form__conclusion Итого:
-            h3.submit-form__price.title.title--sm 13 950 руб.
+            h3.submit-form__price.title.title--sm
           input.submit-form__submit.btn-reset.btn.btn--primary(type="submit" value="Оформить заказ")

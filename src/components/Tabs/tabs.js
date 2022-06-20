@@ -1,18 +1,48 @@
 const activeTabClassName = "tabs__item--active"
+const activeContentClassName = "active"
 
-function changeActiveTab() {
-  window.scrollTo({ top: 0 })
+export function initializeTabs() {
+  const tabs = document.querySelectorAll(".tabs__item")
 
-  const activeTab = document.querySelector(`.${activeTabClassName}`)
-  const futureActiveTab = document.querySelector(`a[href='${location.hash}']`)
+  checkActiveHash()
 
-  if (activeTab) {
-    activeTab.classList.remove(activeTabClassName)
-  }
-
-  futureActiveTab.classList.add(activeTabClassName)
+  tabs.forEach((tab) => tab.addEventListener(
+    "click",
+    (event) => changeActiveTab(event.target)
+  ))
 }
 
-window.addEventListener("hashchange", changeActiveTab)
+function changeActiveTab(tab) {
+  const id = tab.dataset.id
+  const content = document.querySelector(`#${id}`)
 
-changeActiveTab()
+  // Change active tab
+
+  const currentActiveTab = document.querySelector(`.${activeTabClassName}`)
+
+  if (currentActiveTab) {
+    currentActiveTab.classList.remove(activeTabClassName)
+  }
+
+  tab.classList.add(activeTabClassName)
+
+  // Change active section
+
+  const currentActiveContent = document.querySelector(`[id].${activeContentClassName}`)
+
+  if (currentActiveContent) {
+    currentActiveContent.classList.remove(activeContentClassName)
+  }
+
+  content.classList.add(activeContentClassName)
+}
+
+function checkActiveHash() {
+  const pageHash = location.hash.substring(1)
+
+  if (pageHash) {
+    changeActiveTab(
+      document.querySelector(`[data-id=${pageHash}]`)
+    )
+  }
+}

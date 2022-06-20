@@ -68,11 +68,16 @@
     height: rem(40px);
     background-color: var(--color-japonica);
     border-radius: 100%;
+    transition: background-color 0.3s ease-in-out;
 
     svg {
       width: rem(16px);
       height: rem(16px);
       fill: var(--color-light);
+    }
+
+    &:hover {
+      background-color: var(--color-secondary);
     }
 
     @include sm-laptop {
@@ -120,6 +125,22 @@
 
   &__item {
     position: relative;
+
+    &::after {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: rem(2px);
+      content: "";
+      background-color: var(--color-japonica);
+      transition: transform 0.3s ease-in-out;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: none;
+    }
   }
 
   @include resolution(1200px) {

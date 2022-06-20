@@ -1,4 +1,7 @@
-mixin tabs(...items)
+mixin tabs(activeIndex = 0, ...items)
   nav.tabs.container
     each item, index in items
-      a.tabs__item.text.text--md(href=`${item.hash}`)= item.name
+      if index === activeIndex
+        button.tabs__item.tabs__item--active.text.text--md(data-id=`${item.hash}`)= item.name
+      else
+        button.tabs__item.text.text--md(data-id=`${item.hash}`)= item.name

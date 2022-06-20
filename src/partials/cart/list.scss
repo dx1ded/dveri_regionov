@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: rem(16px) rem(30px);
+  padding: 0 rem(30px);
   background-color: var(--color-light);
   border-radius: 10px;
   box-shadow: 0 0 4px rgb(0 0 0 / 20%);
@@ -29,7 +29,7 @@
   }
 
   &__name {
-    max-width: em(320px, 14px);
+    max-width: em(270px, 14px);
 
     @include sm-laptop {
       font-size: rem(11px);
@@ -111,7 +111,7 @@
   &__price,
   &__delete,
   .counter {
-    margin: 0 rem(20px) rem(20px) 0;
+    margin: rem(14px) rem(10px) rem(14px) 0;
   }
 
   @include tablet {

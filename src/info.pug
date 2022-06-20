@@ -18,8 +18,9 @@ block partials
       { name: "Информация", path: "/info" }
     )
     +tabs(
-      { name: "Где купить", hash: "#where-to-buy" },
-      { name: "Контакты", hash: "#contacts" }
+      0,
+      { name: "Где купить", hash: "where-to-buy" },
+      { name: "Контакты", hash: "contacts" }
     )
     include @partials/info/where-to-buy
     include @partials/info/contacts
