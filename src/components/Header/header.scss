@@ -189,3 +189,29 @@
     opacity: 1;
   }
 }
+
+#cart-item[data-is-not-empty] {
+  position: relative;
+
+  span {
+    position: absolute;
+    top: rem(-6px);
+    right: rem(-6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(22px);
+    height: rem(22px);
+    font-size: rem(11px);
+    line-height: 1;
+    background-color: var(--color-light);
+    border-radius: 100%;
+    box-shadow: 0 0 3px rgb(0 0 0 / 20%);
+
+    @include mobile {
+      width: rem(20px);
+      height: rem(20px);
+      font-size: rem(10px);
+    }
+  }
+}

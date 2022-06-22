@@ -1,6 +1,7 @@
 import { counterMarkup, initializeCounters } from "@cmps/Counter/counter"
 
 import { normalizePrice } from "@/utils/normalizePrice"
+import { updateCartCount } from "@/utils/updateCartCount"
 import {
   getItemsFromCart,
   removeItemFromCart,
@@ -58,6 +59,8 @@ deleteButtons.forEach((button) => button.addEventListener(
     // Update items count
 
     updateItemsCount()
+    updateSummary()
+    updateCartCount()
   }
 ))
 

@@ -2,6 +2,7 @@ import { productMarkup } from "@/markup/card"
 
 import { request } from "@/utils/request"
 import { normalizePrice } from "@/utils/normalizePrice"
+import { updateCartCount } from "@/utils/updateCartCount"
 import {
   setItemToCart,
   getItemsCountFromCart
@@ -152,4 +153,6 @@ function addToCart(product) {
       return { name, count }
     })
   })
+
+  updateCartCount()
 }
