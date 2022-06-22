@@ -6,7 +6,7 @@ export const setItemToCart = (item) => {
   const items = getItemsFromCart()
 
   if (!items) {
-    return localStorage.setItem("cart", JSON.stringify(item))
+    return localStorage.setItem("cart", JSON.stringify([item]))
   }
 
   items.push(item)
