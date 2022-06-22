@@ -131,7 +131,7 @@
     }
 
     @include resolution(530px) {
-      margin-top: rem(20px);
+      margin-top: rem(40px);
     }
   }
 
@@ -261,7 +261,6 @@
     display: flex;
     flex: 1 0 rem(200px);
     align-items: flex-start;
-    height: rem(280px);
     margin: 0 0 rem(30px);
   }
 }
