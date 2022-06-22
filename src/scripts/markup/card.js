@@ -133,7 +133,7 @@ export const productMarkup = (
           <button class="product-price__cta btn-reset btn btn--primary" data-modal-open>Вызов замерщика</button>
         </div>
       </div>
-      ${sizes
+      ${sizes && sizes[0]
         ? `
           <div class="product__sizes">
             <p class="product__label">Размеры:</p>
@@ -222,7 +222,7 @@ export const productMarkup = (
             <div class="product__wrapper">
               ${glasses.map((currentGlass) => `
                 <button
-                  class="product__glass btn-reset ${currentGlass.glass === glass ? 'product__glass--active' : ''}"
+                  class="product__glass btn-reset ${currentGlass.articul === articul ? 'product__glass--active' : ''}"
                   aria-label="${currentGlass.glass}"
                   data-value="${currentGlass.glass}"
                   data-type="glass"
