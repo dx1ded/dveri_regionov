@@ -25,5 +25,5 @@ export const removeItemFromCart = (itemIndex) => {
 }
 
 export const getItemsCountFromCart = () => (
-  getItemsFromCart().length
+  getItemsFromCart()?.length
 )

@@ -1,0 +1,20 @@
+extends layouts/page
+include _mixins
+
+block config
+  - page.title = "Не найдено - Дверной Регион"
+
+block styles
+  +style("styles/404.css")
+
+include @cmps/Breadcrumbs/breadcrumbs
+
+block partials
+  include @cmps/Header/header
+  main
+    .container
+      h2.title.title--xl.title--primary(style="margin: 5rem 0") Страница не найдена
+  include @cmps/Footer/footer
+
+block scripts
+  +script("scripts/cards-page.js")

@@ -19,7 +19,7 @@ const list = document.querySelector(".list")
 const container = document.querySelector(".list__container")
 const productsContainer = container.querySelector(".list__wrapper")
 
-const url = new URL(document.location)
+const url = new URL(location.href)
 const params = url.searchParams
 
 const type = getLastSegment()
@@ -27,7 +27,7 @@ const type = getLastSegment()
 setBreadcrumbs([
   { name: "Главная", path: "/" },
   { name: "Каталог", path: "/catalog" },
-  { name: catalogTypes[type], path: `/catalog${type}` }
+  { name: catalogTypes[type], path: `/catalog${type}?page=1` }
 ])
 
 createLoader(list)
