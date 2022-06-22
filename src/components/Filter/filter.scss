@@ -1,0 +1,58 @@
+.filter {
+  padding: rem(25px);
+  background-color: var(--color-light);
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+
+  &__title {
+    margin-bottom: rem(10px);
+
+    @include tablet {
+      font-size: rem(18px);
+    }
+  }
+
+  @include tablet {
+    padding: rem(25px) rem(10px);
+  }
+}
+
+.filter-item {
+  padding: rem(18px) 0;
+  border-bottom: 1px solid var(--color-mercury);
+
+  &__display {
+    display: block;
+    font-size: rem(16px);
+    line-height: 1;
+    text-align: left;
+    cursor: pointer;
+
+    @include tablet {
+      font-size: rem(14px);
+    }
+  }
+
+  &__brands {
+    padding-left: rem(12px);
+  }
+
+  &__brand {
+    display: block;
+    font-size: rem(14px);
+    text-align: left;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: rem(16px);
+    }
+
+    &:first-child {
+      margin-top: rem(24px);
+    }
+
+    &--active {
+      color: var(--color-japonica);
+    }
+  }
+}

@@ -23,6 +23,16 @@
         font-size: rem(12px);
       }
     }
+
+    @include mobile {
+      &::after {
+        margin: 0 rem(4px);
+      }
+
+      a {
+        font-size: rem(11px);
+      }
+    }
   }
 
   @include sm-laptop {

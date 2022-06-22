@@ -1,18 +1,25 @@
 @import "@cmps/Product/product";
 @import "@cmps/Loader/loader";
+@import "@cmps/Filter/filter";
 
 .list {
   position: relative;
 
   &__container {
     display: grid;
+    grid-template-columns: rem(280px) 1fr;
+    gap: rem(35px);
+    align-items: start;
+
+    @include resolution(1060px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(rem(280px), 1fr));
     gap: rem(25px);
-    justify-content: center;
-
-    @include resolution(1224px) {
-      grid-template-columns: repeat(auto-fit, minmax(rem(280px), rem(340px)));
-    }
   }
 }
 

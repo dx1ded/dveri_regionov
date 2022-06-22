@@ -1,8 +1,9 @@
 import { request } from "@/utils/request"
+import { renderProducts } from "@/utils/renderProducts"
 
-import { productMarkup } from "@cmps/Product/product"
 import { setBreadcrumbs } from "@cmps/Breadcrumbs/breadcrumbs"
 import { createLoader, removeLoader } from "@cmps/Loader/loader"
+import { initializeFilter } from "@cmps/Filter/filter"
 import { paginationInitialize } from "@cmps/Pagination/pagination"
 
 const temp = {
@@ -23,13 +24,13 @@ const catalogTypes = {
 
 const list = document.querySelector(".list")
 const container = document.querySelector(".list__container")
+const productsContainer = container.querySelector(".list__wrapper")
 
 const url = new URL(document.location)
 const params = url.searchParams
 
 // const type = url.pathname.substring(1)
 const type = params.get("type")
-const page = +params.get("page") || 0
 
 setBreadcrumbs([
   { name: "Главная", path: "/" },
@@ -39,12 +40,15 @@ setBreadcrumbs([
 
 createLoader(list)
 
-request(`${temp[type]}?page=${page}`)
+request(`${temp[type]}${location.search}`)
   .then((res) => res.json())
   .then(({ products, more }) => {
     removeLoader()
-    renderProducts(products)
-    paginationInitialize(+page + 1, more)
+    renderProducts(products, productsContainer, type)
+    initializeFilter()
+    paginationInitialize(more)
+
+    document.title = `${catalogTypes[type]} - Дверной Регион`
   })
   .catch(() => {
     removeLoader()
@@ -53,18 +57,3 @@ request(`${temp[type]}?page=${page}`)
 
     document.title = "Страница не найдена"
   })
-
-function renderProducts(products) {
-  products.forEach((product) => {
-    container.insertAdjacentHTML(
-      "beforeend",
-      productMarkup({
-        id: product.index,
-        type,
-        name: product.name,
-        price: product.price_opt,
-        image: `https://dver.com/xml/images/${product.articul}.jpeg`
-      })
-    )
-  })
-}

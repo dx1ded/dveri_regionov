@@ -1,23 +1,30 @@
 const paginationList = document.querySelector(".pagination__list")
 
-export function paginationInitialize(page, more) {
+export function paginationInitialize(more) {
+  paginationList.innerHTML = ""
+
+  const searchParams = new URL(location.href).searchParams
+  const page = +searchParams.get("page")
+
   if (page > 1) {
-    addPaginationPrev(page - 1)
-    addPaginationItem(page - 1)
+    addPaginationPrev((searchParams.set("page", page - 1), searchParams.toString()))
+    addPaginationItem((searchParams.set("page", page - 1), searchParams.toString()), page - 1)
   }
+
+  addPaginationItem((searchParams.set("page", page), searchParams.toString()), page, true)
+
   if (more) {
-    addPaginationItem(page, true)
-    addPaginationItem(page + 1)
-    addPaginationNext(page)
+    addPaginationItem((searchParams.set("page", page + 1), searchParams.toString()), page + 1)
+    addPaginationNext((searchParams.set("page", page + 1), searchParams.toString()))
   }
 }
 
-function addPaginationPrev(page) {
+function addPaginationPrev(searchParams) {
   paginationList.insertAdjacentHTML(
     "beforeend",
     `
       <li class="pagination__item">
-        <a href="?page=${page - 1}" class="link-reset">
+        <a href="?${searchParams}" class="link-reset">
           <svg>
             <use xlink:href="assets/images/sprite.svg#arrow-left"></use>
           </svg>
@@ -27,12 +34,12 @@ function addPaginationPrev(page) {
   )
 }
 
-function addPaginationNext(page) {
+function addPaginationNext(searchParams) {
   paginationList.insertAdjacentHTML(
     "beforeend",
     `
       <li class="pagination__item">
-        <a href="?page=${page}" class="link-reset">
+        <a href="?${searchParams}" class="link-reset">
           <svg>
             <use xlink:href="assets/images/sprite.svg#arrow-right"></use>
           </svg>
@@ -42,12 +49,12 @@ function addPaginationNext(page) {
   )
 }
 
-function addPaginationItem(page, isActive) {
+function addPaginationItem(searchParams, page, isActive) {
   paginationList.insertAdjacentHTML(
     "beforeend",
     `
       <li class="pagination__item ${isActive ? 'pagination__item--active' : ''}">
-        <a href="?page=${page - 1}" class="link-reset text text--sm">${page}</a>
+        <a href="?${searchParams}" class="link-reset text text--sm">${page}</a>
       </li>
     `
   )

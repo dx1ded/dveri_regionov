@@ -19,8 +19,8 @@ const container = card.querySelector(".card__container")
 const url = new URL(location.href)
 const params = url.searchParams
 
-const index = params.get("index")
 const type = params.get("type")
+const id = params.get("id")
 
 const catalogTypes = {
   "doors": "Каталог дверей",
@@ -31,7 +31,7 @@ const catalogTypes = {
 }
 
 createLoader(card)
-requestProduct(`/${type}?index=${index}`)
+requestProduct(`/${type}?id=${id}`)
 
 function requestProduct(query) {
   request(query)
@@ -46,7 +46,7 @@ function requestProduct(query) {
       setBreadcrumbs([
         { name: "Главная", path: "/" },
         { name: catalogTypes[type], path: `/catalog/${type}` },
-        { name: data.product.model || "Карточка товара", path: `/product?index=${index}` }
+        { name: data.product.model || "Карточка товара", path: `/product?type=${type}&id=${id}` }
       ])
 
       // Change browser title
@@ -64,9 +64,9 @@ function requestProduct(query) {
 
       // Change URL Query
 
-      const url = new URL(location)
+      const url = new URL(location.href)
       
-      url.searchParams.set("index", data.product.index)
+      url.searchParams.set("id", data.product._id)
 
       history.pushState(null, '', url.toString())
 
@@ -128,7 +128,7 @@ function changeProduct(currentProduct, element) {
         : query.set(type, currentProduct[type])
     })
 
-  query.set("index", currentProduct.index)
+  query.set("id", currentProduct._id)
   query.set("model", currentProduct.model)
 
   createLoader(container, true)

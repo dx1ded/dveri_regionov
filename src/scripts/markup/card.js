@@ -227,7 +227,7 @@ export const productMarkup = (
                   data-value="${currentGlass.glass}"
                   data-type="glass"
                 >
-                  <img src="https://dver.com/xml/colors_images/${currentGlass.name}.jpg" alt="" aria-hidden="true">
+                  <img src="https://dver.com/xml/colors_images/${(currentGlass.model + "_" + currentGlass.glass).toLowerCase()}.jpg" alt="Стекло" aria-hidden="true">
                 </button>
                 `).join("")
               }

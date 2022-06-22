@@ -11,8 +11,9 @@
     text-align: center;
 
     img {
+      width: 100%;
+      object-fit: contain;
       height: rem(280px);
-      object-fit: cover;
     }
 
     @include sm-laptop {
@@ -35,6 +36,7 @@
 
   &__name {
     margin-bottom: rem(30px);
+    word-wrap: break-word;
 
     @include sm-laptop {
       margin-bottom: rem(20px);
