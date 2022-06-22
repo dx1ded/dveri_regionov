@@ -9,9 +9,9 @@ mixin image(file, alt="")
 
   else
     picture
-      source(data-srcset=`assets/images/${fileName}.avif` srcset="assets/images/placeholder.png" type="image/avif")
-      source(data-srcset=`assets/images/${fileName}.webp` srcset="assets/images/placeholder.png" type="image/webp")
-      img(class="lazy" data-src=`assets/images/${file}` src="assets/images/placeholder.png" alt=alt)&attributes(attributes)
+      source(data-srcset=`/assets/images/${fileName}.avif` srcset="/assets/images/placeholder.png" type="image/avif")
+      source(data-srcset=`/assets/images/${fileName}.webp` srcset="/assets/images/placeholder.png" type="image/webp")
+      img(class="lazy" data-src=`/assets/images/${file}` src="/assets/images/placeholder.png" alt=alt)&attributes(attributes)
 
 mixin style(path)
   link(href=path rel="stylesheet")
@@ -21,4 +21,4 @@ mixin script(path)
 
 mixin icon(id)
   svg&attributes(attributes)
-    use(xlink:href=`assets/images/sprite.svg#${id}`)
+    use(xlink:href=`/assets/images/sprite.svg#${id}`)
