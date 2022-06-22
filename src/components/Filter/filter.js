@@ -160,6 +160,7 @@ async function filterItemHandler(item, isInitial) {
     url.searchParams.set("page", 1)
   }
 
+  url.searchParams.set("type", type.replace("/", ""))
   url.searchParams.set("key", key)
   url.searchParams.set("value", value)
 
