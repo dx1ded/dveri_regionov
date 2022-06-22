@@ -19,8 +19,8 @@ const filterItemMarkup = (type) => (`
 `)
 
 const types = {
-  accessories: { title: "Погонаж" },
-  "/catalog/doors": {
+  "/accessories": { title: "Погонаж" },
+  "/doors": {
     title: "Межкомнатные двери",
     list: [
       {
@@ -50,7 +50,7 @@ const types = {
       }
     ]
   },
-  "/catalog/iron-doors": {
+  "/iron-doors": {
     title: "Входные двери",
     list: [
       {
@@ -65,7 +65,7 @@ const types = {
       }
     ]
   },
-  "/catalog/furniture": {
+  "/furniture": {
     title: "Фурнитура",
     list: [
       {
