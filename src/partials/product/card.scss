@@ -237,7 +237,7 @@
 
     @include resolution(530px) {
       gap: rem(10px);
-      align-items: start;
+      align-content: start;
       height: 100%;
       overflow-y: auto;
     }

@@ -102,8 +102,12 @@ const productsContainer = document.querySelector(".list__wrapper")
 const filterActiveItemClassName = "filter-item--active"
 const filterActiveBrandClassName = "filter-item__brand--active"
 
-const queryParams = new URL(location.href).searchParams
+const url = new URL(location.href)
+const queryParams = url.searchParams
+
 const type = queryParams.get("type")
+
+// console.log(url.pathname.substring(1))
 
 export async function initializeFilter() {
   // Render filter types
