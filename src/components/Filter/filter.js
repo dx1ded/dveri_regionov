@@ -245,7 +245,7 @@ async function brandClickHandler(item) {
 
   // Get data (products)
 
-  const query = await request(`catalog${type}?${searchParams.toString()}`)
+  const query = await request(`/catalog${type}?${searchParams.toString()}`)
   const { products, more } = await query.json()
 
   // Render products
