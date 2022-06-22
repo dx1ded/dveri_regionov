@@ -1,4 +1,5 @@
 import { request } from "@/utils/request"
+import { getLastSegment } from "@/utils/getLastSegment"
 import { renderProducts } from "@/utils/renderProducts"
 
 import { setBreadcrumbs } from "@cmps/Breadcrumbs/breadcrumbs"
@@ -6,20 +7,12 @@ import { createLoader, removeLoader } from "@cmps/Loader/loader"
 import { initializeFilter } from "@cmps/Filter/filter"
 import { paginationInitialize } from "@cmps/Pagination/pagination"
 
-const temp = {
-  "doors": "/catalog/doors",
-  "arch": "/catalog/arch",
-  "furniture": "/catalog/furniture",
-  "accessories": "/catalog/accessories",
-  "iron-doors": "/catalog/iron-doors"
-}
-
 const catalogTypes = {
-  "doors": "Каталог дверей",
-  "accessories": "Каталог погонажа",
-  "furniture": "Каталог фурнитуры",
-  "arch": "Каталог арок",
-  "iron-doors": "Каталог железных дверей"
+  "/doors": "Каталог дверей",
+  "/accessories": "Каталог погонажа",
+  "/furniture": "Каталог фурнитуры",
+  "/arch": "Каталог арок",
+  "/iron-doors": "Каталог железных дверей"
 }
 
 const list = document.querySelector(".list")
@@ -29,18 +22,17 @@ const productsContainer = container.querySelector(".list__wrapper")
 const url = new URL(document.location)
 const params = url.searchParams
 
-// const type = url.pathname.substring(1)
-const type = params.get("type")
+const type = getLastSegment()
 
 setBreadcrumbs([
   { name: "Главная", path: "/" },
   { name: "Каталог", path: "/catalog" },
-  { name: catalogTypes[type], path: `/catalog/${type}` }
+  { name: catalogTypes[type], path: `/catalog${type}` }
 ])
 
 createLoader(list)
 
-request(`${temp[type]}${location.search}`)
+request(`/catalog${type}?${params.toString()}`)
   .then((res) => res.json())
   .then(({ products, more }) => {
     removeLoader()

@@ -2,6 +2,7 @@ import { paginationInitialize } from "@cmps/Pagination/pagination"
 
 import { request } from "@/utils/request"
 import { renderProducts } from "@/utils/renderProducts"
+import { getLastSegment } from "@/utils/getLastSegment"
 
 const filterItemMarkup = (type) => (`
   <h3 class="title title--xs title--primary filter__title">${type.title}</h3>
@@ -19,7 +20,7 @@ const filterItemMarkup = (type) => (`
 
 const types = {
   accessories: { title: "Погонаж" },
-  doors: {
+  "/catalog/doors": {
     title: "Межкомнатные двери",
     list: [
       {
@@ -49,7 +50,7 @@ const types = {
       }
     ]
   },
-  "iron-doors": {
+  "/catalog/iron-doors": {
     title: "Входные двери",
     list: [
       {
@@ -64,7 +65,7 @@ const types = {
       }
     ]
   },
-  furniture: {
+  "/catalog/furniture": {
     title: "Фурнитура",
     list: [
       {
@@ -105,9 +106,7 @@ const filterActiveBrandClassName = "filter-item__brand--active"
 const url = new URL(location.href)
 const queryParams = url.searchParams
 
-const type = queryParams.get("type")
-
-// console.log(url.pathname.substring(1))
+const type = getLastSegment()
 
 export async function initializeFilter() {
   // Render filter types
@@ -131,7 +130,8 @@ export async function initializeFilter() {
   const currentKey = queryParams.get("key")
   const currentValue = queryParams.get("value")
 
-  const currentItem = filter.querySelector(`[data-key="${currentKey}"][data-value="${currentValue}"]`)
+  const currentItem = filter
+    .querySelector(`[data-key="${currentKey}"][data-value="${currentValue}"]`)
 
   if (currentItem) {
     await filterItemHandler(currentItem, true)
@@ -201,7 +201,7 @@ async function filterItemHandler(item, isInitial) {
   })
 
   if (!isInitial) {
-    const query = await request(`/catalog/${type}?${url.searchParams.toString()}`)
+    const query = await request(`/catalog${type}?${url.searchParams.toString()}`)
     const { products, more } = await query.json()
 
     // Render products
@@ -244,7 +244,7 @@ async function brandClickHandler(item) {
 
   // Get data (products)
 
-  const query = await request(`/catalog/${type}?${searchParams.toString()}`)
+  const query = await request(`catalog${type}?${searchParams.toString()}`)
   const { products, more } = await query.json()
 
   // Render products

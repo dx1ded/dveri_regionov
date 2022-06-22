@@ -54,7 +54,7 @@ function renderProducts(products) {
       "beforeend",
       productMarkup({
         id: product.index,
-        type: "doors",
+        type: "/doors",
         name: product.name,
         price: product.price_opt,
         image: `https://dver.com/xml/images/${product.articul}.jpeg`

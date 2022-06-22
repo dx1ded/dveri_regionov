@@ -3,6 +3,7 @@ import { productMarkup } from "@/markup/card"
 import { request } from "@/utils/request"
 import { normalizePrice } from "@/utils/normalizePrice"
 import { updateCartCount } from "@/utils/updateCartCount"
+import { getLastSegment } from "@/utils/getLastSegment"
 import {
   setItemToCart,
   getItemsCountFromCart
@@ -20,19 +21,19 @@ const container = card.querySelector(".card__container")
 const url = new URL(location.href)
 const params = url.searchParams
 
-const type = params.get("type")
+const type = getLastSegment()
 const id = params.get("id")
 
 const catalogTypes = {
-  "doors": "Каталог дверей",
-  "accessories": "Каталог погонажа",
-  "furniture": "Каталог фурнитуры",
-  "arch": "Каталог арок",
-  "iron-doors": "Каталог железных дверей"
+  "/doors": "Каталог дверей",
+  "/accessories": "Каталог погонажа",
+  "/furniture": "Каталог фурнитуры",
+  "/arch": "Каталог арок",
+  "/iron-doors": "Каталог железных дверей"
 }
 
 createLoader(card)
-requestProduct(`/${type}?id=${id}`)
+requestProduct(`${type}?id=${id}`)
 
 function requestProduct(query) {
   request(query)
@@ -46,8 +47,8 @@ function requestProduct(query) {
       initializeCounters(calculatePrice)
       setBreadcrumbs([
         { name: "Главная", path: "/" },
-        { name: catalogTypes[type], path: `/catalog/${type}` },
-        { name: data.product.model || "Карточка товара", path: `/product?type=${type}&id=${id}` }
+        { name: catalogTypes[type], path: `/catalog${type}` },
+        { name: data.product.model || "Карточка товара", path: `${type}?id=${id}` }
       ])
 
       // Change browser title
@@ -133,7 +134,7 @@ function changeProduct(currentProduct, element) {
   query.set("model", currentProduct.model)
 
   createLoader(container, true)
-  requestProduct(`/${type}/change?${query.toString()}`)
+  requestProduct(`${type}/change?${query.toString()}`)
 }
 
 function addToCart(product) {
