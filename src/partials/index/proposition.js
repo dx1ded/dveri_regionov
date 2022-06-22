@@ -53,7 +53,7 @@ function renderProducts(products) {
     container.insertAdjacentHTML(
       "beforeend",
       productMarkup({
-        id: product.index,
+        id: product._id,
         type: "/doors",
         name: product.name,
         price: product.price_opt,
