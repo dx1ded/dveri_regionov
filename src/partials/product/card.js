@@ -38,9 +38,11 @@ requestProduct(`${type}?id=${id}`)
 function requestProduct(query) {
   request(query)
     .then((res) => res.json())
-    .then(({ product }) => {
+    .then((data) => {
       removeLoader()
-      renderCard(product)
+      console.log(1)
+      renderCard(data)
+      console.log(2)
       calculatePrice()
       initializeModal()
       initializeTabs()
@@ -48,12 +50,12 @@ function requestProduct(query) {
       setBreadcrumbs([
         { name: "Главная", path: "/" },
         { name: catalogTypes[type], path: `/catalog${type}?page=1` },
-        { name: product.model || "Карточка товара", path: `${type}?id=${id}` }
+        { name: data.product.model || "Карточка товара", path: `${type}?id=${id}` }
       ])
 
       // Change browser title
 
-      document.title = product.name
+      document.title = data.product.name
 
       // Initiliaze events on product change elements
 
@@ -61,14 +63,14 @@ function requestProduct(query) {
 
       changeElements.forEach((element) => element.addEventListener(
         "click",
-        changeProduct.bind(this, product)
+        changeProduct.bind(this, data.product)
       ))
 
       // Change URL Query
 
       const url = new URL(location.href)
       
-      url.searchParams.set("id", product._id)
+      url.searchParams.set("id", data.product._id)
 
       history.pushState(null, '', url.toString())
 
@@ -76,7 +78,7 @@ function requestProduct(query) {
 
       const addToCartButton = document.querySelector("#add-to-cart")
 
-      addToCartButton.addEventListener("click", addToCart.bind(this, product))
+      addToCartButton.addEventListener("click", addToCart.bind(this, data.product))
     })
   .catch(() => {
     removeLoader()
@@ -88,6 +90,7 @@ function requestProduct(query) {
 }
 
 function renderCard({ product, colors, sizes, glasses, innerColors, outerColors }) {
+  console.log("render")
   container.innerHTML = ""
   container.insertAdjacentHTML(
     "beforeend",
