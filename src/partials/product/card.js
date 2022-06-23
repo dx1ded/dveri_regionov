@@ -40,9 +40,7 @@ function requestProduct(query) {
     .then((res) => res.json())
     .then((data) => {
       removeLoader()
-      console.log(1)
       renderCard(data)
-      console.log(2)
       calculatePrice()
       initializeModal()
       initializeTabs()
@@ -90,7 +88,6 @@ function requestProduct(query) {
 }
 
 function renderCard({ product, colors, sizes, glasses, innerColors, outerColors }) {
-  console.log("render")
   container.innerHTML = ""
   container.insertAdjacentHTML(
     "beforeend",
