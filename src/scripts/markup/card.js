@@ -86,7 +86,7 @@ export const productMarkup = (
       <div class="product-image__current">
         <img src="https://dver.com/xml/images/${articul}.jpeg" alt="${name}">
       </div>
-      ${colors && colors[0], console.log(12)
+      ${colors
         ? `
           <div class="product-image__list">
             ${colors.map((color) => `
@@ -153,7 +153,7 @@ export const productMarkup = (
           `
         : ""
       }
-      ${colors && colors[0], console.log(12)
+      ${colors
         ? `
           <div class="product__colors">
             <p class="product__label">Цвета:</p>
